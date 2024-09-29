@@ -6,7 +6,7 @@
     // Background data
     const image_src = "/portfolio_2025/images/rpg/water.png";
     const image_data = {
-        pixels: {height: 580, width: 1038}
+        pixels: {height: 6000 ,4000 width: 1038}
     };
     const image = {src: image_src, data: image_data};
 
