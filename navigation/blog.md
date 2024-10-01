@@ -13,3 +13,4 @@ permalink: /blogs/
 - **GameEnv.js**: Defines  is a static class that manages the game environment. This code uses a classic Java static class pattern, which is effective for managing centralized data.
 - **Background.js**: Handles the background.
 - **Player.js**: Handles the player
+
