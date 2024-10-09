@@ -4,4 +4,5 @@ title: About
 permalink: /about/
 ---
 
-Creator of Student 2025
+My name is Srinaga PRahalad Pillutla
+I am a sophmore at del Norte High school
