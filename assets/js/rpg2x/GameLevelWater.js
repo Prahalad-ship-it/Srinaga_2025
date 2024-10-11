@@ -60,14 +60,14 @@ class GameLevelWater {
         up: {row: 3, start: 0, columns: 3 },    // 4th row
     };
 
-    // NPC sprite data (frog)
+    // NPC sprite data (eagle))
     const sprite_src_frog = path + "/images/rpg/fishies.png";
     const sprite_data_frog = {
         name: 'npc',
         src: sprite_src_frog,
         SCALE_FACTOR: 16,  // Adjust this based on your scaling needs
         ANIMATION_RATE: 50,
-        pixels: {height: 256, width: 384},
+        pixels: {height: 1280, width: 218},
         INIT_POSITION: { x: (width / 2), y: (height / 2)},
         orientation: {rows: 8, columns: 12 },
         down: {row: 0, start: 9, columns: 3 },  // This is the stationary npc, down is default 
