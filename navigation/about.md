@@ -111,6 +111,6 @@ My Dad is from Telangana In Hyderbad
 Gallery of Pics, scroll to the right for more ...
 </comment>
 <div class="image-gallery">
-  
+    
 </div>
 
