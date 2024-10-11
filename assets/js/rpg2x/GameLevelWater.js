@@ -61,7 +61,7 @@ class GameLevelWater {
     };
 
     // NPC sprite data (eagle))
-    const sprite_src_frog = path + "/images/rpg/fishies.png";
+    const sprite_src_frog = path + "/images/rpg/.png";
     const sprite_data_frog = {
         name: 'npc',
         src: sprite_src_frog,
