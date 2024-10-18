@@ -64,7 +64,7 @@ class Player {
             this.direction = 'down'; // Initial direction
             this.spriteData = sprite.data;
         } else {
-            // Default to red square
+            // Default to owl.png
             this.scaleFactor = SCALE_FACTOR;
             this.stepFactor = STEP_FACTOR;
             this.animationRate = ANIMATION_RATE;

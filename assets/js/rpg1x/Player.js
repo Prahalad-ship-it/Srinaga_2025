@@ -58,7 +58,7 @@ class Player {
     
             // Load the sprite sheet
             this.spriteSheet = new Image();
-            this.spriteSheet.src = data.src;
+            this.owl.png.src = data.src;
 
             // Initialize animation properties
             this.frameIndex = 0; // index reference to current frame
