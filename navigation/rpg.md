@@ -47,7 +47,7 @@ permalink: /rpg/
     const fish = { src: sprite_src_fish, data: sprite_data_fish };
 
     // Assets for game
-    const assets = { image: image, owl: owl, fish: fish };
+    const assets = { image: image, owl: owl, fish: owl };
 
     // Start game engine
     GameControl.start(assets);
