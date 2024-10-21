@@ -61,16 +61,16 @@ class GameLevelWater {
     };
 
     // NPC sprite data (eagle))
-    const sprite_src_frog = path + "/images/rpg/.png";
+    const sprite_src_frog = path + "/images/rpg/owl.png";
     const sprite_data_frog = {
         name: 'npc',
         src: sprite_src_frog,
         SCALE_FACTOR: 16,  // Adjust this based on your scaling needs
         ANIMATION_RATE: 50,
-        pixels: {height: 1280, width: 218},
+        pixels: {height: 537, width: 546},
         INIT_POSITION: { x: (width / 2), y: (height / 2)},
-        orientation: {rows: 8, columns: 12 },
-        down: {row: 0, start: 9, columns: 3 },  // This is the stationary npc, down is default 
+        orientation: {rows: 1, columns: 1 },
+        down: {row: 0, start: 0, columns: 1 },  // This is the stationary npc, down is default 
     };
 
     // List of objects defnitions for this level
