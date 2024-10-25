@@ -73,11 +73,22 @@ This blog contains my journey into Coding.
             Variables I/O
         </div>
     </a>
-    <a href="" style="text-decoration: none;">
+    <a href="http://127.0.0.1:4100/Srinaga_2025/csse/javascript/fundamentals/variables" style="text-decoration: none;">
         <div style="background-color: #000000; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
-            Fundamentals variables: http://127.0.0.1:4100/Srinaga_2025/csse/javascript/fundamentals/variables
+            Fundamentals variables: 
         </div>
     </a>
-</div>
-
+ <div style ="display: flex; flex-wrap: wrap; gap: 10px;">
+<a href="=http://127.0.0.1:4100/Srinaga_2025/2024/09/30/data-types-operations_IPYNB_2_.html" style="text-decoration: none;">
+        <div style="background-color: #000000; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
+            Data Types: 
+        </div>
+        div style="background-color: #000000; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
+            Variables I/O
+        </div>
+    </a>
+    <a href="https://prahalad-ship-it.github.io/Srinaga_2025/game/intro/json" style="text-decoration: none;">
+        <div style="background-color: #000000; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
+            JSON Object: 
+        </div>
 <br>
