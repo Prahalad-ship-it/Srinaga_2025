@@ -87,8 +87,8 @@ This blog contains my journey into Coding.
             Variables I/O
         </div>
     </a>
-    <a href="https://prahalad-ship-it.github.io/Srinaga_2025/game/intro/json" style="text-decoration: none;">
+    <a href="https://prahalad-ship-it.github.io/Srinaga_2025/2024/09/30/data-types-operations_IPYNB_2_.html" style="text-decoration: none;">
         <div style="background-color: #000000; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
-            JSON Object: 
+            Data Types: 
         </div>
-<br>
+    </a>
