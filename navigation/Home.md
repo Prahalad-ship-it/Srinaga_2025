@@ -1,6 +1,6 @@
 ---
 layout: base
-title: Srinaga Prahalad Home 
+title: "Srinaga Prahalad Home"
 description: Home Page
 hide: true
 ---
@@ -35,7 +35,7 @@ This blog contains my journey into Coding.
 
 ### Game Progress
 
-> Here is my progress through game coding, click to see these online
+> Here is my progress through game coding, click to see these online.
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
     <a href="{{site.baseurl}}/snake" style="text-decoration: none;">
@@ -59,13 +59,12 @@ This blog contains my journey into Coding.
         </div>
     </a>
 </div>
-</div>
 
 <br>
 
 ### College Articulation
 
-> Here is my preparation for college topics, click to review my blogs
+> Here is my preparation for college topics, click to review my blogs.
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
     <a href="https://prahalad-ship-it.github.io/Srinaga_2025/csse/javascript/fundamentals/for-loops/" style="text-decoration: none;">
@@ -75,20 +74,22 @@ This blog contains my journey into Coding.
     </a>
     <a href="http://127.0.0.1:4100/Srinaga_2025/csse/javascript/fundamentals/variables" style="text-decoration: none;">
         <div style="background-color: #000000; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
-            Fundamentals variables: 
-        </div>
-    </a>
- <div style ="display: flex; flex-wrap: wrap; gap: 10px;">
-<a href="=http://127.0.0.1:4100/Srinaga_2025/2024/09/30/data-types-operations_IPYNB_2_.html" style="text-decoration: none;">
-        <div style="background-color: #000000; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
-            Data Types: 
-        </div>
-        div style="background-color: #000000; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
-            Variables I/O
+            Fundamentals Variables
         </div>
     </a>
     <a href="https://prahalad-ship-it.github.io/Srinaga_2025/2024/09/30/data-types-operations_IPYNB_2_.html" style="text-decoration: none;">
         <div style="background-color: #000000; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
-            Data Types: 
+            Data Types
         </div>
     </a>
+    <a href="https://github.com/Prahalad-ship-it/Srinaga_2025/tree/main/_notebooks/Sprint3/Variables%20Sprint3" style="text-decoration: none;">
+        <div style="background-color: #000000; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
+            JavaScript Variables
+        </div>
+    </a>
+</div>
+<a href="https://github.com/Prahalad-ship-it/Srinaga_2025/tree/main/_notebooks/Sprint3/operators%20Sprint3" style="text-decoration: none;">
+        <div style="background-color: #000000; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
+    </div>
+</a>
+
