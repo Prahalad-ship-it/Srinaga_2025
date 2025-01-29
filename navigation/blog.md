@@ -78,7 +78,3 @@ permalink: /blogs/
     </style>
 </head>
 <body>
-
-    <h1>Game Overview</h1>
-    ## Day 1
-    - I had an Idea that what if u can 
