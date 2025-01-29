@@ -89,4 +89,9 @@ This blog contains my journey into Coding.
     </a>
 </div>
 </a>
-<a href =
+<a href="https://github.com/Prahalad-ship-it/Srinaga_2025/tree/main/_notebooks/Foundation/Sprint%206" style="text-decoration: none;">
+    <div style="background-color: #000000; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
+        Journal
+    </div>
+    </a>
+
