@@ -20,10 +20,16 @@ minima:
 plugins:
   - jekyll-remote-theme
 header_pages:
+  - navigation/adventureGame.md
   - navigation/blog.md
   - navigation/search.md
   - navigation/about.md
   - navigation/rpg2x.md
   - README4YML.md
   - navigation/Home.md
-  - navigation/adventureGame.md
+
+
+
+
+
+
