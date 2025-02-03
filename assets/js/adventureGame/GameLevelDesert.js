@@ -3,7 +3,7 @@ import GameEnv from './GameEnv.js';
 import Background from './Background.js';
 import Player from './Player.js';
 import Npc from './Npc.js';
-import compass from './compass.js';
+import Compass from './compass.js';
 class GameLevelDesert {
   constructor(path) {
     const header = document.querySelector('header');
