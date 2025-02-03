@@ -1,5 +1,3 @@
----
----
 // from https://github.com/pmarsceill/just-the-docs/blob/master/assets/js/just-the-docs.js#L47
 
 (function (jtd, undefined) {
@@ -56,11 +54,11 @@ function initSearch() {
         // Success!
         var data = JSON.parse(request.responseText);
         
-        {% if site.search_tokenizer_separator != nil %}
-        lunr.tokenizer.separator = {{ site.search_tokenizer_separator }}
-        {% else %}
-        lunr.tokenizer.separator = /[\s\-/]+/
-        {% endif %}
+        var separator = /[\s\-/]+/; // default separator
+        if (typeof site !== 'undefined' && site.search_tokenizer_separator) {
+          separator = new RegExp(site.search_tokenizer_separator);
+        }
+        lunr.tokenizer.separator = separator;
         
         var index = lunr(function () {
           this.ref('id');
