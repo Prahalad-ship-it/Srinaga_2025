@@ -1,9 +1,10 @@
-// To build GameLevels, each contains GameObjects from below imports
 import GameEnv from './GameEnv.js';
 import Background from './Background.js';
 import Player from './Player.js';
 import Npc from './Npc.js';
 import Compass from './compass.js';
+import Key from './Key.js';
+
 class GameLevelDesert {
   constructor(path) {
     const header = document.querySelector('header');
@@ -52,14 +53,41 @@ class GameLevelDesert {
       keypress: { up: 87, left: 65, down: 83, right: 68 }
     };
 
+    // Key data configuration (maintains existing code structure)
+    const key_src = path + "/images/items/key.png";
+    const key_data = {
+      id: 'Golden Key',
+      greeting: "A shimmering park maintenance key!",
+      src: key_src,
+      SCALE_FACTOR: 4,
+      STEP_FACTOR: 0,
+      ANIMATION_RATE: 150,
+      INIT_POSITION: { x: 0.8, y: 0.7 }, // Position in right-bottom quadrant
+      pixels: { 
+        height: 502,
+        width: 497 
+      },
+      orientation: {
+        rows: 1,
+        columns: 4
+      },
+      animations: {
+        idle: { row: 0, columns: 4 }
+      },
+      hitbox: {
+        widthPercentage: 0.3,
+        heightPercentage: 0.3
+      }
+    };
+
     // NPC data for Bear
     const sprite_src_tux = path + "/images/gamify/bear.png";
     const sprite_data_tux = {
       id: 'Bear',
       greeting: "Hi, I am Bear! Ready for an adventure?",
       src: sprite_src_tux,
-      SCALE_FACTOR: 10, // Keeping the original scale factor
-      ANIMATION_RATE: 20, // Keeping the original animation rate
+      SCALE_FACTOR: 10,
+      ANIMATION_RATE: 20,
       pixels: { height: 216, width: 396 },
       INIT_POSITION: { x: (width / 2), y: (height / 2) },
       orientation: { rows: 8, columns: 11 },
@@ -117,8 +145,9 @@ class GameLevelDesert {
       { class: Background, data: image_data_desert },
       { class: Player, data: sprite_data_chillguy },
       { class: Npc, data: sprite_data_tux },
-      { class: Npc, data: sprite_data_octocat },
-      { class: Npc, data: sprite_data_tux },
+      { class: Npc, data: sprite_data_octocat },  // Adding Octocat NPC here
+      { class: Key, data: key_data },
+      { class: Key, data: key_data } 
     ];
   }
 }

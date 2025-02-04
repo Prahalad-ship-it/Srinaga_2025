@@ -82,14 +82,8 @@ This blog contains my journey into Coding.
             Data Types
         </div>
     </a>
-    <a href="https://github.com/Prahalad-ship-it/Srinaga_2025/tree/main/_notebooks/Sprint3/Variables%20Sprint3" style="text-decoration: none;">
-        <div style="background-color: #000000; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
-            JavaScript Variables
-        </div>
-    </a>
-</div>
-</a>
-<a href="https://github.com/Prahalad-ship-it/Srinaga_2025/tree/main/_notebooks/Foundation/Sprint%206" style="text-decoration: none;">
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+    <a href="https://github.com/Prahalad-ship-it/Srinaga_2025/tree/main/_notebooks/Foundation/Sprint%206" style="text-decoration: none;">
     <div style="background-color: #000000; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
         Journal
     </div>
