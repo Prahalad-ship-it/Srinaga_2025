@@ -13,7 +13,7 @@ class GameLevelDesert {
     let height = GameEnv.innerHeight;
 
     // Background data
-    const image_src_desert = path + "/images/gamify/YellowstoneRiver.png"; 
+    const image_src_desert = path + "/images/gamify/Yellowstone.png"; 
     const image_data_desert = {
       name: 'YellowstoneRiver',
       greeting: "Welcome to the Yellowstone River you are in America's first National Park so slay enjoy!",
@@ -33,7 +33,7 @@ class GameLevelDesert {
     document.body.appendChild(compassImg); // Add the compass to the document body
 
     // Player data for Chillguy
-    const sprite_src_chillguy = path + "/images/gamify/chillguy.png";
+    const sprite_src_chillguy = path + "/images/gamify/explorer.png";
     const CHILLGUY_SCALE_FACTOR = 5;
     const sprite_data_chillguy = {
       id: 'Chill Guy',
@@ -57,7 +57,7 @@ class GameLevelDesert {
     const key_src = path + "/images/items/key.png";
     const key_data = {
       id: 'Golden Key',
-      greeting: "A shimmering park maintenance key!",
+      greeting: "Restricted get the key to unlock the myth about yellowstone park!",
       src: key_src,
       SCALE_FACTOR: 4,
       STEP_FACTOR: 0,
@@ -80,41 +80,41 @@ class GameLevelDesert {
       }
     };
 
-    // NPC data for Bear
-    const sprite_src_tux = path + "/images/gamify/bear.png";
+    // NPC data for Bear (Modified questions to Yellowstone-related)
+    const sprite_src_tux = path + "/images/gamify/chillguy.png";
     const sprite_data_tux = {
       id: 'Bear',
-      greeting: "Hi, I am Bear! Ready for an adventure?",
+      greeting: "Greetings, traveler! I am a Yellowstone Park Ranger, here to share the story of this incredible land. Established in 1872, Yellowstone was the very first national park in the world, a groundbreaking decision that set the stage for preserving nature’s wonders for future generations. From the towering geysers like Old Faithful to the sprawling Lamar Valley, home to wolves, bison, and grizzlies, this park holds more than just beauty—it holds history. Indigenous peoples, including the Shoshone and Crow, lived here for thousands of years, long before explorers and conservationists fought to protect it. So tread carefully and respect the land, for you are walking through a living, breathing piece of history!",
       src: sprite_src_tux,
       SCALE_FACTOR: 10,
-      ANIMATION_RATE: 20,
-      pixels: { height: 216, width: 396 },
+      ANIMATION_RATE: 50,
+      pixels: { height: 384, width: 512},
       INIT_POSITION: { x: (width / 2), y: (height / 2) },
       orientation: { rows: 8, columns: 11 },
       down: { row: 5, start: 0, columns: 3 },
       hitbox: { widthPercentage: 0.1, heightPercentage: 0.2 },
       quiz: {
-        title: "Linux Command Quiz",
+        title: "Yellowstone Quiz",
         questions: [
-          "Which command is used to list files in a directory?\n1. ls\n2. dir\n3. list\n4. show",
-          "Which command is used to change directories?\n1. cd\n2. chdir\n3. changedir\n4. changedirectory",
-          "Which command is used to create a new directory?\n1. mkdir\n2. newdir\n3. createdir\n4. makedir",
-          "Which command is used to remove a file?\n1. rm\n2. remove\n3. delete\n4. erase",
-          "Which command is used to remove a directory?\n1. rmdir\n2. removedir\n3. deletedir\n4. erasedir",
-          "Which command is used to copy files?\n1. cp\n2. copy\n3. duplicate\n4. xerox",
-          "Which command is used to move files?\n1. mv\n2. move\n3. transfer\n4. relocate",
-          "Which command is used to view a file?\n1. cat\n2. view\n3. show\n4. display",
-          "Which command is used to search for text in a file?\n1. grep\n2. search\n3. find\n4. locate",
-          "Which command is used to view the contents of a file?\n1. less\n2. more\n3. view\n4. cat"
+          "What year was Yellowstone National Park established?\n1. 1872\n2. 1800\n3. 1900\n4. 1750",
+          "Which of these animals is native to Yellowstone?\n1. Bison\n2. Kangaroo\n3. Penguin\n4. Elephant",
+          "What is the name of the famous geyser in Yellowstone?\n1. Old Faithful\n2. Big Blast\n3. Steamy Joe\n4. Hot Springs",
+          "Which river flows through Yellowstone?\n1. Yellowstone River\n2. Missouri River\n3. Colorado River\n4. Snake River",
+          "Yellowstone is located primarily in which U.S. state?\n1. Wyoming\n2. California\n3. Montana\n4. Utah",
+          "Which famous volcanic feature can be found in Yellowstone?\n1. Supervolcano\n2. Mount St. Helens\n3. Kilauea\n4. Mount Fuji",
+          "Which U.S. president signed the bill establishing Yellowstone as a national park?\n1. Ulysses S. Grant\n2. Abraham Lincoln\n3. Theodore Roosevelt\n4. Franklin D. Roosevelt",
+          "What is the name of the geothermal area that features hot springs and fumaroles in Yellowstone?\n1. Norris Geyser Basin\n2. Everglades\n3. Grand Canyon\n4. Glacier Basin",
+          "Which wildlife species can be found in Yellowstone?\n1. Grizzly Bears\n2. Tigers\n3. Cheetahs\n4. Polar Bears",
+          "What geological feature is Yellowstone best known for?\n1. Geysers\n2. Mountains\n3. Waterfalls\n4. Desert"
         ]
       }
     };
 
-    // NPC data for Octocat
-    const sprite_src_octocat = path + "/images/gamify/octocat.png";
+    // NPC data for Octocat (Modified questions to Yellowstone-related)
+    const sprite_src_octocat = path + "/images/gamify/bison.png";
     const sprite_data_octocat = {
       id: 'Octocat',
-      greeting: "Hi I am Octocat! I am the GitHub code collaboration mascot",
+      greeting: "Hello, traveler! Did you know Yellowstone is home to the largest concentration of geysers in the world?",
       src: sprite_src_octocat,
       SCALE_FACTOR: 10,
       ANIMATION_RATE: 50,
@@ -124,18 +124,18 @@ class GameLevelDesert {
       down: { row: 0, start: 0, columns: 3 },
       hitbox: { widthPercentage: 0.1, heightPercentage: 0.1 },
       quiz: {
-        title: "GitHub Command Quiz",
+        title: "Yellowstone Fun Facts Quiz",
         questions: [
-          "Which command is used to clone a repository?\n1. git clone\n2. git fork\n3. git copy\n4. git download",
-          "Which command is used to add changes to the staging area?\n1. git add\n2. git stage\n3. git commit\n4. git push",
-          "Which command is used to commit changes?\n1. git commit\n2. git add\n3. git save\n4. git push",
-          "Which command is used to push changes to a remote repository?\n1. git push\n2. git upload\n3. git send\n4. git commit",
-          "Which command is used to pull changes from a remote repository?\n1. git pull\n2. git fetch\n3. git receive\n4. git update",
-          "Which command is used to check the status of the working directory and staging area?\n1. git status\n2. git check\n3. git info\n4. git log",
-          "Which command is used to create a new branch?\n1. git branch\n2. git create-branch\n3. git new-branch\n4. git checkout",
-          "Which command is used to switch to a different branch?\n1. git checkout\n2. git switch\n3. git change-branch\n4. git branch",
-          "Which command is used to merge branches?\n1. git merge\n2. git combine\n3. git join\n4. git integrate",
-          "Which command is used to view the commit history?\n1. git log\n2. git history\n3. git commits\n4. git show"
+          "What is the name of the massive volcanic crater found in Yellowstone?\n1. Yellowstone Caldera\n2. Mount St. Helens\n3. Mount Fuji\n4. Crater Lake",
+          "Yellowstone is home to which of the following geothermal features?\n1. Hot Springs\n2. Caves\n3. Lava Tubes\n4. Volcanoes",
+          "How many species of mammals can be found in Yellowstone?\n1. Over 60 species\n2. 10 species\n3. 100 species\n4. 30 species",
+          "Which geyser is the largest in the world?\n1. Steamboat Geyser\n2. Old Faithful\n3. Grand Geyser\n4. Morning Glory Pool",
+          "What is the elevation of Yellowstone National Park?\n1. 7,000 feet\n2. 4,000 feet\n3. 9,000 feet\n4. 5,000 feet",
+          "Which of these is NOT a feature of Yellowstone?\n1. Tropical Rainforest\n2. Hot Springs\n3. Geysers\n4. Waterfalls",
+          "What is the primary reason Yellowstone was established as a national park?\n1. To protect its unique geothermal features\n2. To protect its wildlife\n3. To provide recreation\n4. To preserve forests",
+          "What famous volcano is located underneath Yellowstone?\n1. Yellowstone Supervolcano\n2. Mount Vesuvius\n3. Mount Etna\n4. Mount St. Helens",
+          "Yellowstone was the first national park in the world. When was it established?\n1. 1872\n2. 1912\n3. 1800\n4. 1850",
+          "Which famous animal can be seen roaming the plains of Yellowstone?\n1. Bison\n2. Elephants\n3. Lions\n4. Kangaroos"
         ]
       }
     };
