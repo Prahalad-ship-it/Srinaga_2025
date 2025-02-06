@@ -21,19 +21,19 @@ class GameLevelDesert {
       pixels: { height: 580, width: 1038 }
     };
 
-    // Compass image incorporation (225x225)
+    // Compass image incorporation (110x110)
     const compassImg = document.createElement('img');
     compassImg.src = path + "/images/gamify/compass.png"; // Make sure the path is correct
     compassImg.alt = "Compass";
     compassImg.style.position = 'absolute';
-    compassImg.style.top = '20px'; // Adjust top position
-    compassImg.style.left = '20px'; // Adjust left position
-    compassImg.style.height = '100px'; // Set the height
-    compassImg.style.width = '100px'; // Set the width
+    compassImg.style.top = '-5px'; // Adjust top position
+    compassImg.style.left = '0px'; // Adjust left position
+    compassImg.style.height = '110px'; // Set the height
+    compassImg.style.width = '110px'; // Set the width
     document.body.appendChild(compassImg); // Add the compass to the document body
 
     // Player data for Chillguy
-    const sprite_src_chillguy = path + "/images/gamify/explorer.png";
+    const sprite_src_chillguy = path + "/images/gamify/chillguy.png";
     const CHILLGUY_SCALE_FACTOR = 5;
     const sprite_data_chillguy = {
       id: 'Chill Guy',
