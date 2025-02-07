@@ -291,5 +291,11 @@ This blog contains my journey into Coding.
         <div style="background-color:rgb(0, 0, 0); color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
             Week 19 Burndown
         </div>
-    </a>
+</div>
+<div syle="display: flex; flex-wrap: wrap: gap: 10px;">
+  <a href="http://127.0.0.1:4100/Srinaga_2025/about/" style = "text decoration: none;">
+ <div style="background-color:rgb(157, 216, 18); color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
+      About Me 
+        </div>
+        </a>
 </div>

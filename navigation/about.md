@@ -10,7 +10,6 @@ permalink: /about/
 Gandhinagar and San Diego
 <comment>
 Flags are made using Wikipedia images
-![alt text](image-3.png) Hi
 </comment>
 
 <style>
