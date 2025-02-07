@@ -114,6 +114,13 @@ My Dad is from Telangana In Hyderbad
 - I love helping people during hard times 
 - I love biolgy ![alt text](image-5.png)
 - I love my dad mum and sister they are greatest being and supportive of me during tough times
+- I love the West love yellowstoe my favorite game is yellowstone unleashed. 
+- I hope you have nice day bye 
+
+- Image gallery 
+  - ![alt text](image-6.png)
+  - ![alt text](image-7.png)
+  - ![alt text](image-8.png)
 
 
 
