@@ -21,15 +21,15 @@ class GameLevelDesert {
       pixels: { height: 580, width: 1038 }
     };
 
-    // Compass image incorporation (110x110)
+    // Compass image incorporation (225x225)
     const compassImg = document.createElement('img');
     compassImg.src = path + "/images/gamify/compass.png"; // Make sure the path is correct
     compassImg.alt = "Compass";
     compassImg.style.position = 'absolute';
     compassImg.style.top = '-5px'; // Adjust top position
     compassImg.style.left = '0px'; // Adjust left position
-    compassImg.style.height = '110px'; // Set the height
-    compassImg.style.width = '110px'; // Set the width
+    compassImg.style.height = '200px'; // Set the height
+    compassImg.style.width = '100px'; // Set the width
     document.body.appendChild(compassImg); // Add the compass to the document body
 
     // Player data for Chillguy
@@ -111,32 +111,32 @@ class GameLevelDesert {
     };
 
     // NPC data for Octocat (Modified questions to Yellowstone-related)
-    const sprite_src_octocat = path + "/images/gamify/bison.png";
+    const sprite_src_octocat = path + "/images/gamify/kodiak.png";
     const sprite_data_octocat = {
       id: 'Octocat',
       greeting: "Hello, traveler! Did you know Yellowstone is home to the largest concentration of geysers in the world?",
       src: sprite_src_octocat,
-      SCALE_FACTOR: 10,
-      ANIMATION_RATE: 50,
-      pixels: { height: 301, width: 801 },
+      SCALE_FACTOR: 8,
+      ANIMATION_RATE: 100,
+      pixels: { height: 482, width: 538 },
       INIT_POSITION: { x: (width / 4), y: (height / 4) },
       orientation: { rows: 1, columns: 4 },
       down: { row: 0, start: 0, columns: 3 },
       hitbox: { widthPercentage: 0.1, heightPercentage: 0.1 },
       quiz: {
-        title: "Yellowstone Fun Facts Quiz",
-        questions: [
-          "What is the name of the massive volcanic crater found in Yellowstone?\n1. Yellowstone Caldera\n2. Mount St. Helens\n3. Mount Fuji\n4. Crater Lake",
-          "Yellowstone is home to which of the following geothermal features?\n1. Hot Springs\n2. Caves\n3. Lava Tubes\n4. Volcanoes",
-          "How many species of mammals can be found in Yellowstone?\n1. Over 60 species\n2. 10 species\n3. 100 species\n4. 30 species",
-          "Which geyser is the largest in the world?\n1. Steamboat Geyser\n2. Old Faithful\n3. Grand Geyser\n4. Morning Glory Pool",
-          "What is the elevation of Yellowstone National Park?\n1. 7,000 feet\n2. 4,000 feet\n3. 9,000 feet\n4. 5,000 feet",
-          "Which of these is NOT a feature of Yellowstone?\n1. Tropical Rainforest\n2. Hot Springs\n3. Geysers\n4. Waterfalls",
-          "What is the primary reason Yellowstone was established as a national park?\n1. To protect its unique geothermal features\n2. To protect its wildlife\n3. To provide recreation\n4. To preserve forests",
-          "What famous volcano is located underneath Yellowstone?\n1. Yellowstone Supervolcano\n2. Mount Vesuvius\n3. Mount Etna\n4. Mount St. Helens",
-          "Yellowstone was the first national park in the world. When was it established?\n1. 1872\n2. 1912\n3. 1800\n4. 1850",
-          "Which famous animal can be seen roaming the plains of Yellowstone?\n1. Bison\n2. Elephants\n3. Lions\n4. Kangaroos"
-        ]
+      title: "Yellowstone Fun Facts Quiz",
+      questions: [
+      "What is the name of the massive volcanic crater found in Yellowstone?\n1. Yellowstone Caldera\n2. Mount St. Helens\n3. Mount Fuji\n4. Crater Lake",
+      "Yellowstone is home to which of the following geothermal features?\n1. Hot Springs\n2. Caves\n3. Lava Tubes\n4. Volcanoes",
+      "How many species of mammals can be found in Yellowstone?\n1. Over 60 species\n2. 10 species\n3. 100 species\n4. 30 species",
+      "Which geyser is the largest in the world?\n1. Steamboat Geyser\n2. Old Faithful\n3. Grand Geyser\n4. Morning Glory Pool",
+      "What is the elevation of Yellowstone National Park?\n1. 7,000 feet\n2. 4,000 feet\n3. 9,000 feet\n4. 5,000 feet",
+      "Which of these is NOT a feature of Yellowstone?\n1. Tropical Rainforest\n2. Hot Springs\n3. Geysers\n4. Waterfalls",
+      "What is the primary reason Yellowstone was established as a national park?\n1. To protect its unique geothermal features\n2. To protect its wildlife\n3. To provide recreation\n4. To preserve forests",
+      "What famous volcano is located underneath Yellowstone?\n1. Yellowstone Supervolcano\n2. Mount Vesuvius\n3. Mount Etna\n4. Mount St. Helens",
+      "Yellowstone was the first national park in the world. When was it established?\n1. 1872\n2. 1912\n3. 1800\n4. 1850",
+      "Which famous animal can be seen roaming the plains of Yellowstone?\n1. Bison\n2. Elephants\n3. Lions\n4. Kangaroos"
+      ]
       }
     };
 
