@@ -21,6 +21,8 @@
  * @property {boolean} timerActive - Flag to indicate if the timer is active.
  * @property {number} timerInterval - The interval for the timer.
  * @property {number} time - The current time.
+ * @property {number} totalQuestions - The total number of quiz questions.
+ * @property {number} questionsAnswered - The number of quiz questions answered correctly.
  */
 class GameEnv {
     static gameObjects = [];
@@ -34,7 +36,11 @@ class GameEnv {
     static timerActive = false;
     static timerInterval = 10;
     static time = 0;
-    
+
+    // Quiz-related properties
+    static totalQuestions = 0;  // Number of quiz questions, can be set dynamically
+    static questionsAnswered = 0;  // Correctly answered questions
+
     /**
      * Private constructor to prevent instantiation.
      * 
@@ -126,6 +132,57 @@ class GameEnv {
      */
     static clear() {
         this.ctx.clearRect(0, 0, this.innerWidth, this.innerHeight);
+    }
+
+    /**
+     * Set the total number of questions in the quiz.
+     * 
+     * This is used to dynamically set how many questions need to be answered.
+     * 
+     * @static
+     * @param {number} quizLength - The total number of questions in the quiz.
+     */
+    static setTotalQuestions(quizLength) {
+        this.totalQuestions = quizLength;
+    }
+
+    /**
+     * Check if all quiz questions have been answered correctly.
+     * 
+     * @static
+     * @returns {boolean} - Returns true if all questions have been answered.
+     */
+    static get allQuestionsAnswered() {
+        return this.questionsAnswered >= this.totalQuestions;
+    }
+
+    /**
+     * Increments the count of correctly answered questions.
+     * 
+     * This method should be called each time the player answers a question correctly.
+     * 
+     * @static
+     */
+    static incrementAnsweredQuestions() {
+        if (this.questionsAnswered < this.totalQuestions) {
+            this.questionsAnswered++;
+            console.log(`✅ Questions Answered: ${this.questionsAnswered}/${this.totalQuestions}`);
+
+            if (this.allQuestionsAnswered) {
+                console.log("🎉 All questions answered! You can now collect the key.");
+                this.unlockKey();  // Unlock the key once all questions are answered
+            }
+        }
+    }
+
+    /**
+     * Unlocks the key when all quiz questions are answered correctly.
+     * 
+     * @static
+     */
+    static unlockKey() {
+        console.log("🔑 The key is now unlocked and can be collected!");
+        // Additional logic to give the player the key could go here
     }
 }
 

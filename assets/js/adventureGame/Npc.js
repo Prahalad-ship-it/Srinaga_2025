@@ -51,7 +51,6 @@ class Npc extends Character {
         this.currentQuestionIndex = 0; // Start from the first question
         this.correctAnswers = 0; // Track correct answers
         this.alertTimeout = null;
-        this.keysPressed = {}; // Track key press state
         this.bindEventListeners();
     }
 
@@ -73,32 +72,12 @@ class Npc extends Character {
         }
     }
 
-    handleKeyUp({ keyCode }) {
-        this.keysPressed[keyCode] = false; // Track key release state
-        switch (keyCode) {
-            case this.keypress.up:
-                this.velocity.y = 0;
-                break;
-            case this.keypress.left:
-                this.velocity.x = 0;
-                break;
-            case this.keypress.down: 
-                this.velocity.y = 0;
-                break;
-            case this.keypress.right: 
-                this.velocity.x = 0;
-                break;
-        }
-
-        // Check if any keys are still pressed
-        this.idle();
-    }
-
-    idle() {
-        // Check if any keys are pressed
-        const keys = Object.values(this.keysPressed);
-        if (!keys.includes(true)) {
-            this.direction = 'idle';
+    handleKeyUp({ key }) {
+        if (key === 'e' || key === 'u') {
+            if (this.alertTimeout) {
+                clearTimeout(this.alertTimeout);
+                this.alertTimeout = null;
+            }
         }
     }
 
