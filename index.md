@@ -274,28 +274,32 @@ This blog contains my journey into Coding.
             Data Types
         </div>
     </a>
+</div>
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
     <a href="https://github.com/Prahalad-ship-it/Srinaga_2025/tree/main/_notebooks/Foundation/Sprint%206" style="text-decoration: none;">
-    <div style="background-color: #000000; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
-        Journal
-    </div>
-    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-        <a href="https://github.com/Prahalad-ship-it/Srinaga_2025/issues/9" style="text-decoration: none;">
-            <div style="background-color:rgb(0, 0, 0); color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
-                Burn Down Wk 20-21
-            </div>
-        </a>
-    </div>
+        <div style="background-color: #000000; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
+            Journal
+        </div>
+    </a>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+    <a href="https://github.com/Prahalad-ship-it/Srinaga_2025/issues/9" style="text-decoration: none;">
+        <div style="background-color:rgb(0, 0, 0); color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
+            Burn Down Wk 20-21
+        </div>
+    </a>
+</div>
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
     <a href="https://github.com/Prahalad-ship-it/Srinaga_2025/issues/8" style="text-decoration: none;">
         <div style="background-color:rgb(0, 0, 0); color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
             Week 19 Burndown
         </div>
+    </a>
 </div>
-<div syle="display: flex; flex-wrap: wrap: gap: 10px;">
-  <a href="http://127.0.0.1:4100/Srinaga_2025/about/" style = "text decoration: none;">
- <div style="background-color:rgb(157, 216, 18); color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
-      About Me 
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+    <a href="http://127.0.0.1:4100/Srinaga_2025/about/" style="text-decoration: none;">
+        <div style="background-color:rgb(157, 216, 18); color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
+            About Me
         </div>
-        </a>
+    </a>
 </div>
