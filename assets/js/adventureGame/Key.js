@@ -41,20 +41,16 @@ class Key extends Character {
             // Animate using the first row (idle spin)
             this.frameY = 0;
             this.animateFrame(); // Ensure animateFrame is defined
-            const directions = {
-                down: { start: 1, row: 1 },
-            
-            };
-            
-            if (!this.directionData) {
-                console.error("Error: directionData is undefined!", this.currentDirection);
-            }
-                    }
+            super.draw(); // Call the draw method from Character class
+        }
     }
 
-    // Define animateFrame method if not inherited from Character
     animateFrame() {
-        // Implementation of animateFrame
+        // Update the frame index for animation at a slower rate
+        this.frameCounter++;
+        if (this.frameCounter % this.spriteData.ANIMATION_RATE === 0) {
+            this.frameIndex = (this.frameIndex + 1) % this.spriteData.orientation.columns;
+        }
     }
 
     bindEventListeners() {

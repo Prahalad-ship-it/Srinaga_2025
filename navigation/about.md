@@ -10,6 +10,7 @@ permalink: /about/
 Gandhinagar and San Diego
 <comment>
 Flags are made using Wikipedia images
+![alt text](image-3.png) Hi
 </comment>
 
 <style>
@@ -107,10 +108,12 @@ My family is From South India
 My Mum is from Andhra Area in Konasemma District I believe
 My Dad is from Telangana In Hyderbad
 
-<comment>
-Gallery of Pics, scroll to the right for more ...
-</comment>
-<div class="image-gallery">
-    
-</div>
+### Facts
+- I am 15 year old person who loves cricket yes pls givew me bat and ball I will smash you like Sewhag ![alt text](image-4.png) 
+- I freaking love to cook I am foodie 
+- I love helping people during hard times 
+- I love biolgy ![alt text](image-5.png)
+- I love my dad mum and sister they are greatest being and supportive of me during tough times
+
+
 
