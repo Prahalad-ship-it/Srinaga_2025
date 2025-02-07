@@ -9,26 +9,26 @@ class GameLevelDesert {
   constructor(path) {
     const header = document.querySelector('header');
     const footer = document.querySelector('footer');
-    let width = GameEnv.innerWidth;
-    let height = GameEnv.innerHeight;
+    let width = GameEnv.innerWidth; // Make sure GameEnv is correctly imported and has innerWidth
+    let height = GameEnv.innerHeight; // Same here for height
 
     // Background data
     const image_src_desert = path + "/images/gamify/Yellowstone.png"; 
     const image_data_desert = {
       name: 'YellowstoneRiver',
-      greeting: "Welcome to the Yellowstone River you are in America's first National Park so slay enjoy!",
+      greeting: "Welcome to the Yellowstone River, you are in America's first National Park! Enjoy your adventure!",
       src: image_src_desert,
       pixels: { height: 580, width: 1038 }
     };
 
     // Compass image incorporation (225x225)
     const compassImg = document.createElement('img');
-    compassImg.src = path + "/images/gamify/compass.png"; // Make sure the path is correct
+    compassImg.src = path + "/images/gamify/compass.png"; // Ensure the path is correct
     compassImg.alt = "Compass";
     compassImg.style.position = 'absolute';
-    compassImg.style.top = '-5px'; // Adjust top position
-    compassImg.style.left = '0px'; // Adjust left position
-    compassImg.style.height = '200px'; // Set the height
+    compassImg.style.top = '-5px'; // Adjusted top position
+    compassImg.style.left = '0px'; // Adjusted left position
+    compassImg.style.height = '100px'; // Set the height
     compassImg.style.width = '100px'; // Set the width
     document.body.appendChild(compassImg); // Add the compass to the document body
 
@@ -37,7 +37,7 @@ class GameLevelDesert {
     const CHILLGUY_SCALE_FACTOR = 5;
     const sprite_data_chillguy = {
       id: 'Chill Guy',
-      greeting: "Hi I am Chill Guy, The Yellowstone Ranger. There are so many precious beauties in our Park, please no littering!",
+      greeting: "Hi, I am Chill Guy, The Yellowstone Ranger. There are so many precious beauties in our Park, please no littering!",
       src: sprite_src_chillguy,
       SCALE_FACTOR: CHILLGUY_SCALE_FACTOR,
       STEP_FACTOR: 1000,
@@ -53,11 +53,11 @@ class GameLevelDesert {
       keypress: { up: 87, left: 65, down: 83, right: 68 }
     };
 
-    // Key data configuration (maintains existing code structure)
+    // Key data configuration
     const key_src = path + "/images/items/key.png";
     const key_data = {
       id: 'Golden Key',
-      greeting: "Restricted get the key to unlock the myth about yellowstone park!",
+      greeting: "Restricted access! Get the key to unlock the myth about Yellowstone Park!",
       src: key_src,
       SCALE_FACTOR: 4,
       STEP_FACTOR: 0,
@@ -81,10 +81,10 @@ class GameLevelDesert {
     };
 
     // NPC data for Bear (Modified questions to Yellowstone-related)
-    const sprite_src_tux = path + "/images/gamify/chillguy.png";
+    const sprite_src_tux = path + "/images/gamify/chillguy.png"; // Fix source path if different image
     const sprite_data_tux = {
       id: 'Bear',
-      greeting: "Greetings, traveler! I am a Yellowstone Park Ranger, here to share the story of this incredible land. Established in 1872, Yellowstone was the very first national park in the world, a groundbreaking decision that set the stage for preserving nature’s wonders for future generations. From the towering geysers like Old Faithful to the sprawling Lamar Valley, home to wolves, bison, and grizzlies, this park holds more than just beauty—it holds history. Indigenous peoples, including the Shoshone and Crow, lived here for thousands of years, long before explorers and conservationists fought to protect it. So tread carefully and respect the land, for you are walking through a living, breathing piece of history!",
+      greeting: "Greetings, traveler! I am a Yellowstone Park Ranger, here to share the story of this incredible land.",
       src: sprite_src_tux,
       SCALE_FACTOR: 10,
       ANIMATION_RATE: 50,
@@ -110,33 +110,33 @@ class GameLevelDesert {
       }
     };
 
-    // NPC data for Octocat (Modified questions to Yellowstone-related)
-    const sprite_src_octocat = path + "/images/gamify/kodiak.png";
+    // NPC data for Octocat
+    const sprite_src_octocat = path + "/images/gamify/npc3.png"; // Fix source path if different image
     const sprite_data_octocat = {
       id: 'Octocat',
       greeting: "Hello, traveler! Did you know Yellowstone is home to the largest concentration of geysers in the world?",
       src: sprite_src_octocat,
-      SCALE_FACTOR: 8,
+      SCALE_FACTOR: 5,
       ANIMATION_RATE: 100,
-      pixels: { height: 482, width: 538 },
+      pixels: { height: 149, width: 538 },
       INIT_POSITION: { x: (width / 4), y: (height / 4) },
       orientation: { rows: 1, columns: 4 },
       down: { row: 0, start: 0, columns: 3 },
       hitbox: { widthPercentage: 0.1, heightPercentage: 0.1 },
       quiz: {
-      title: "Yellowstone Fun Facts Quiz",
-      questions: [
-      "What is the name of the massive volcanic crater found in Yellowstone?\n1. Yellowstone Caldera\n2. Mount St. Helens\n3. Mount Fuji\n4. Crater Lake",
-      "Yellowstone is home to which of the following geothermal features?\n1. Hot Springs\n2. Caves\n3. Lava Tubes\n4. Volcanoes",
-      "How many species of mammals can be found in Yellowstone?\n1. Over 60 species\n2. 10 species\n3. 100 species\n4. 30 species",
-      "Which geyser is the largest in the world?\n1. Steamboat Geyser\n2. Old Faithful\n3. Grand Geyser\n4. Morning Glory Pool",
-      "What is the elevation of Yellowstone National Park?\n1. 7,000 feet\n2. 4,000 feet\n3. 9,000 feet\n4. 5,000 feet",
-      "Which of these is NOT a feature of Yellowstone?\n1. Tropical Rainforest\n2. Hot Springs\n3. Geysers\n4. Waterfalls",
-      "What is the primary reason Yellowstone was established as a national park?\n1. To protect its unique geothermal features\n2. To protect its wildlife\n3. To provide recreation\n4. To preserve forests",
-      "What famous volcano is located underneath Yellowstone?\n1. Yellowstone Supervolcano\n2. Mount Vesuvius\n3. Mount Etna\n4. Mount St. Helens",
-      "Yellowstone was the first national park in the world. When was it established?\n1. 1872\n2. 1912\n3. 1800\n4. 1850",
-      "Which famous animal can be seen roaming the plains of Yellowstone?\n1. Bison\n2. Elephants\n3. Lions\n4. Kangaroos"
-      ]
+        title: "Yellowstone Fun Facts Quiz",
+        questions: [
+          "What is the name of the massive volcanic crater found in Yellowstone?\n1. Yellowstone Caldera\n2. Mount St. Helens\n3. Mount Fuji\n4. Crater Lake",
+          "Yellowstone is home to which of the following geothermal features?\n1. Hot Springs\n2. Caves\n3. Lava Tubes\n4. Volcanoes",
+          "How many species of mammals can be found in Yellowstone?\n1. Over 60 species\n2. 10 species\n3. 100 species\n4. 30 species",
+          "Which geyser is the largest in the world?\n1. Steamboat Geyser\n2. Old Faithful\n3. Grand Geyser\n4. Morning Glory Pool",
+          "What is the elevation of Yellowstone National Park?\n1. 7,000 feet\n2. 4,000 feet\n3. 9,000 feet\n4. 5,000 feet",
+          "Which of these is NOT a feature of Yellowstone?\n1. Tropical Rainforest\n2. Hot Springs\n3. Geysers\n4. Waterfalls",
+          "What is the primary reason Yellowstone was established as a national park?\n1. To protect its unique geothermal features\n2. To protect its wildlife\n3. To provide recreation\n4. To preserve forests",
+          "What famous volcano is located underneath Yellowstone?\n1. Yellowstone Supervolcano\n2. Mount Vesuvius\n3. Mount Etna\n4. Mount St. Helens",
+          "Yellowstone was the first national park in the world. When was it established?\n1. 1872\n2. 1912\n3. 1800\n4. 1850",
+          "Which famous animal can be seen roaming the plains of Yellowstone?\n1. Bison\n2. Elephants\n3. Lions\n4. Kangaroos"
+        ]
       }
     };
 
@@ -145,9 +145,8 @@ class GameLevelDesert {
       { class: Background, data: image_data_desert },
       { class: Player, data: sprite_data_chillguy },
       { class: Npc, data: sprite_data_tux },
-      { class: Npc, data: sprite_data_octocat },  // Adding Octocat NPC here
-      { class: Key, data: key_data },
-      { class: Key, data: key_data } 
+      { class: Npc, data: sprite_data_octocat },
+      { class: Key, data: key_data } // Only adding the key once
     ];
   }
 }
