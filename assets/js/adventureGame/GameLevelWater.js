@@ -3,6 +3,7 @@ import Background from './Background.js';
 import Npc from './Npc.js';
 import Character from './Character.js';
 import Player from './Player.js';
+import Key from './Key.js';
 
 class GameLevelWater {
   constructor(path) {
@@ -14,7 +15,7 @@ class GameLevelWater {
     let height = GameEnv.innerHeight;
 
     // Background data
-    const image_src_water = path + "/images/gamify/deepseadungeon.jpeg";
+    const image_src_water = path + "/images/gamify/mario.png"; // be sure to include the path
     const image_data_water = {
         id: 'Water',
         src: image_src_water,

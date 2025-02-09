@@ -97,27 +97,27 @@ class GameLevelDesert {
     };
 
     // NPC data for Octocat
-    const sprite_src_octocat = `${path}/images/gamify/npc3.png`;
+    const sprite_src_octocat = `${path}/images/gamify/bear.png`; 
     const sprite_data_octocat = {
       id: 'Octocat',
       greeting: "Hello, traveler! Did you know Yellowstone is home to the largest concentration of geysers in the world?",
       src: sprite_src_octocat,
       SCALE_FACTOR: 5,
       ANIMATION_RATE: 100,
-      pixels: { height: 149, width: 538 },
+      pixels: { height: 228, width: 256 },
       INIT_POSITION: { x: width / 4, y: height / 4 },
-      orientation: { rows: 1, columns: 4 },
-      down: { row: 0, start: 0, columns: 3 },
-      left: { row: 0, start: 1, columns: 3 },
-      right: { row: 0, start: 2, columns: 3 },
+      orientation: { rows: 3, columns: 4 },
+      down: { row: 2, start: 0, columns: 3 },
+      left: { row: 3, start: 0, columns: 3 },
+      right: { row: 1, start:0, columns: 3 },
       up: { row: 0, start: 3, columns: 3 },
       hitbox: { widthPercentage: 0.1, heightPercentage: 0.1 },
       quiz: {
-        title: "Yellowstone Fun Facts Quiz",
-        questions: [
-          "What is the name of the massive volcanic crater found in Yellowstone?\n1. Yellowstone Caldera\n2. Mount St. Helens\n3. Mount Fuji\n4. Crater Lake",
-          "Yellowstone is home to which of the following geothermal features?\n1. Hot Springs\n2. Caves\n3. Lava Tubes\n4. Volcanoes",
-        ]
+      title: "Yellowstone Fun Facts Quiz",
+      questions: [
+      "What is the name of the massive volcanic crater found in Yellowstone?\n1. Yellowstone Caldera\n2. Mount St. Helens\n3. Mount Fuji\n4. Crater Lake",
+      "Yellowstone is home to which of the following geothermal features?\n1. Hot Springs\n2. Caves\n3. Lava Tubes\n4. Volcanoes",
+      ]
       }
     };
 
