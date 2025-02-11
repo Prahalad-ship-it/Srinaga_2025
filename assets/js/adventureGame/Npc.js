@@ -14,7 +14,7 @@ class Npc extends Character {
         this.currentQuestionIndex = 0; // Start from the first question
         this.correctAnswers = 0; // Track correct answers
         this.alertTimeout = null;
-        this.rickRollAudio = new Audio("https://www.myinstants.com/media/sounds/rickroll.mp3"); // Rick Roll sound
+        this.rickRollAudio = document.getElementById("rickRollAudio"); // Reference to the audio element
         
         this.bindEventListeners();
     }
