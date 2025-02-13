@@ -2,7 +2,7 @@ import GameEnv from './GameEnv.js';
 import Background from './Background.js';
 import Player from './Player.js';
 import Npc from './Npc.js';
-import Compass from './compass.js';
+import Compass from './Compass.js';
 import Key from './Key.js';
 
 class GameLevelDesert {
@@ -71,30 +71,27 @@ class GameLevelDesert {
       hitbox: { widthPercentage: 0.3, heightPercentage: 0.3 }
     };
 
-    // NPC data for Bear
-    const sprite_src_bear = `${path}/images/gamify/bear.png`; // Ensure correct image for Bear
-    const sprite_data_bear = {
-      id: 'Bear',
-      greeting: "Greetings, traveler! I am a Yellowstone Park Ranger, here to share the story of this incredible land.",
-      src: sprite_src_bear,
-      SCALE_FACTOR: 10,
-      ANIMATION_RATE: 50,
-      pixels: { height: 384, width: 512 },
-      INIT_POSITION: { x: width / 2, y: height / 2 },
-      orientation: { rows: 8, columns: 11 },
-      down: { row: 5, start: 0, columns: 3 },
-      left: { row: 6, start: 0, columns: 3 },
-      right: { row: 7, start: 0, columns: 3 },
-      up: { row: 4, start: 0, columns: 3 },
-      hitbox: { widthPercentage: 0.1, heightPercentage: 0.2 },
-      quiz: {
-        title: "Yellowstone Quiz",
-        questions: [
-          "What year was Yellowstone National Park established?\n1. 1872\n2. 1800\n3. 1900\n4. 1750",
-          "Which of these animals is native to Yellowstone?\n1. Bison\n2. Kangaroo\n3. Penguin\n4. Elephant",
-        ]
-      }
-    };
+    const sprite_src_robot = path + "/images/gamify/robot.png"; // be sure to include the path
+    const sprite_data_robot = {
+        id: 'Robot',
+        greeting: "Hi I am Robot, the Jupyter Notebook mascot.  I am very happy to spend some linux shell time with you!",
+        src: sprite_src_robot,
+        SCALE_FACTOR: 10,  // Adjust this based on your scaling needs
+        ANIMATION_RATE: 100,
+        pixels: {height: 316, width: 627},
+        INIT_POSITION: { x: (width * 3 / 4), y: (height * 3 / 4)},
+        orientation: {rows: 3, columns: 6 },
+        down: {row: 1, start: 0, columns: 6 },  // This is the stationary npc, down is default 
+        hitbox: { widthPercentage: 0.1, heightPercentage: 0.2 },
+        // Linux command quiz
+        quiz: { 
+          title: "Jupyter Notebook Command Quiz",
+          questions: [
+            "What is the name of the massive volcanic crater found in Yellowstone?\n1. Yellowstone Caldera\n2. Mount St. Helens\n3. Mount Fuji\n4. Crater Lake",
+      "Yellowstone is home to which of the following geothermal features?\n1. Hot Springs\n2. Caves\n3. Lava Tubes\n4. Volcanoes",
+          ] 
+        }
+      };
 
     // NPC data for Octocat
     const sprite_src_octocat = `${path}/images/gamify/bear.png`; 
@@ -125,7 +122,7 @@ class GameLevelDesert {
     this.objects = [
       { class: Background, data: image_data_desert },
       { class: Player, data: sprite_data_chillguy },
-      { class: Npc, data: sprite_data_bear },
+      { class: Npc, data: sprite_data_robot },
       { class: Npc, data: sprite_data_octocat },
       { class: Key, data: key_data }
     ];

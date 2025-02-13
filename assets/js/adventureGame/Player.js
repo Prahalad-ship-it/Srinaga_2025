@@ -24,7 +24,7 @@ class Player extends Character {
      */
     constructor(data = null) {
         super(data);
-        this.keypress = {up: 38, left: 37, down: 40, right: 39}; // Arrow keys
+        this.keypress = {up: 38, left: 37, down: 40, right: 39, jump: 32}; // Arrow keys and spacebar
         this.bindEventListeners();
     }
 

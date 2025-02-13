@@ -1,9 +1,10 @@
 import GameObject from './GameObject.js';
 
 class Compass extends GameObject {
-    constructor(player) {
+    constructor(player, npc) {
         super();
         this.player = player;
+        this.npc = npc; // NPC for interaction
         this.direction = 'N';
         this.blockedDirections = ["N"]; // List of blocked directions
 
@@ -17,6 +18,12 @@ class Compass extends GameObject {
     }
 
     updateDirection() {
+        // Ensure player and npc are valid objects and have position and velocity properties
+        if (!this.player || !this.npc || !this.player.position || !this.npc.position || !this.player.velocity) {
+            console.error("Player or NPC is not properly initialized!");
+            return;
+        }
+
         const { x, y } = this.player.velocity;
 
         if (y < 0) this.direction = 'N';
@@ -25,6 +32,7 @@ class Compass extends GameObject {
         else if (x > 0) this.direction = 'E';
 
         this.checkBlockedPath();
+        this.checkInteraction();
     }
 
     checkBlockedPath() {
@@ -32,6 +40,23 @@ class Compass extends GameObject {
             console.log(`⛔ You are blocked from moving ${this.direction}!`);
             this.player.velocity.x = 0;
             this.player.velocity.y = 0;
+        }
+    }
+
+    checkInteraction() {
+        // Ensure player and npc positions are defined
+        if (!this.player.position || !this.npc.position) {
+            console.error("Player or NPC does not have a position defined!");
+            return;
+        }
+
+        const distance = Math.hypot(
+            this.player.position.x - this.npc.position.x,
+            this.player.position.y - this.npc.position.y
+        );
+        
+        if (distance < 50) { // Interaction range
+            console.log("🗨️ The compass reacts! You are near an NPC.");
         }
     }
 
@@ -47,20 +72,12 @@ class Compass extends GameObject {
         this.draw();
     }
 
-    /**
-     * Add a new blocked direction dynamically.
-     * @param {string} direction - Direction to block (e.g., "N", "S", "E", "W").
-     */
     addBlockedDirection(direction) {
         if (!this.blockedDirections.includes(direction)) {
             this.blockedDirections.push(direction);
         }
     }
 
-    /**
-     * Remove a blocked direction dynamically.
-     * @param {string} direction - Direction to unblock.
-     */
     removeBlockedDirection(direction) {
         this.blockedDirections = this.blockedDirections.filter(dir => dir !== direction);
     }
