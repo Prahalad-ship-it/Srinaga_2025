@@ -15,7 +15,7 @@ class GameLevelDesert {
     let height = GameEnv.innerHeight || window.innerHeight;
 
     // Background data
-    const image_src_desert = `${path}/images/gamify/Yellowstone.png`;
+    const image_src_desert = `${path}/images/gamify/desert.png`;
     const image_data_desert = {
       name: 'YellowstoneRiver',
       greeting: "Welcome to the Yellowstone River, you are in America's first National Park! Enjoy your adventure!",
@@ -93,12 +93,12 @@ class GameLevelDesert {
         }
       };
 
-    // NPC data for Octocat
-    const sprite_src_octocat = `${path}/images/gamify/bear.png`; 
-    const sprite_data_octocat = {
-      id: 'Octocat',
+    // NPC data for Bear
+    const sprite_src_bear = `${path}/images/gamify/bear.png`; 
+    const sprite_data_bear = {
+      id: 'Bear',
       greeting: "Hello, traveler! Did you know Yellowstone is home to the largest concentration of geysers in the world?",
-      src: sprite_src_octocat,
+      src: sprite_src_bear,
       SCALE_FACTOR: 5,
       ANIMATION_RATE: 100,
       pixels: { height: 228, width: 256 },
@@ -106,14 +106,14 @@ class GameLevelDesert {
       orientation: { rows: 3, columns: 4 },
       down: { row: 2, start: 0, columns: 3 },
       left: { row: 3, start: 0, columns: 3 },
-      right: { row: 1, start:0, columns: 3 },
+      right: { row: 1, start: 0, columns: 3 },
       up: { row: 0, start: 3, columns: 3 },
       hitbox: { widthPercentage: 0.1, heightPercentage: 0.1 },
       quiz: {
       title: "Yellowstone Fun Facts Quiz",
       questions: [
-      "What is the name of the massive volcanic crater found in Yellowstone?\n1. Yellowstone Caldera\n2. Mount St. Helens\n3. Mount Fuji\n4. Crater Lake",
-      "Yellowstone is home to which of the following geothermal features?\n1. Hot Springs\n2. Caves\n3. Lava Tubes\n4. Volcanoes",
+        "What is the name of the massive volcanic crater found in Yellowstone?\n1. Yellowstone Caldera\n2. Mount St. Helens\n3. Mount Fuji\n4. Crater Lake",
+        "Yellowstone is home to which of the following geothermal features?\n1. Hot Springs\n2. Caves\n3. Lava Tubes\n4. Volcanoes",
       ]
       }
     };
@@ -123,7 +123,7 @@ class GameLevelDesert {
       { class: Background, data: image_data_desert },
       { class: Player, data: sprite_data_chillguy },
       { class: Npc, data: sprite_data_robot },
-      { class: Npc, data: sprite_data_octocat },
+      { class: Npc, data: sprite_data_bear },
       { class: Key, data: key_data }
     ];
   }
