@@ -15,6 +15,15 @@ class Compass extends GameObject {
         document.getElementById("gameContainer").appendChild(this.canvas);
         
         this.updateDirection();
+        this.setupKeyListener();
+    }
+
+    setupKeyListener() {
+        window.addEventListener('keydown', (event) => {
+            if (event.key === 'w' || event.key === 'W') {
+                this.checkInteraction();
+            }
+        });
     }
 
     updateDirection() {
@@ -32,7 +41,6 @@ class Compass extends GameObject {
         else if (x > 0) this.direction = 'E';
 
         this.checkBlockedPath();
-        this.checkInteraction();
     }
 
     checkBlockedPath() {

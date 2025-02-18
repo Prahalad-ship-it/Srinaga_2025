@@ -1,7 +1,7 @@
 import GameEnv from './GameEnv.js';
 import Background from './Background.js';
 import Player from './Player.js';
-import Npc from './Npc.js';
+import { Npc } from './Npc.js';
 import Compass from './Compass.js';
 import Key from './Key.js';
 
@@ -118,12 +118,32 @@ class GameLevelDesert {
       }
     };
 
+    // Compass data
+    const compass_data = {
+      id: 'Compass',
+      greeting: "I will guide you to the exit, just follow my directions. Talk to the robot NPC and do the quiz.",
+      src: compassImg.src,
+      SCALE_FACTOR: 1,
+      ANIMATION_RATE: 0,
+      INIT_POSITION: { x: parseInt(compassImg.style.left), y: parseInt(compassImg.style.top) },
+      pixels: { height: parseInt(compassImg.style.height), width: parseInt(compassImg.style.width) },
+      hitbox: { widthPercentage: 1, heightPercentage: 1 },
+      quiz: {
+      title: "Compass Quiz",
+      questions: [
+      "Which direction does a compass needle point?\n1. North\n2. South\n3. East\n4. West",
+      "What is the main use of a compass?\n1. Navigation\n2. Cooking\n3. Writing\n4. Painting"
+      ]
+      }
+    };
+
     // List of objects definitions for this level
     this.objects = [
       { class: Background, data: image_data_desert },
       { class: Player, data: sprite_data_chillguy },
       { class: Npc, data: sprite_data_robot },
       { class: Npc, data: sprite_data_bear },
+      { class: Compass, data: compass_data },
       { class: Key, data: key_data }
     ];
   }

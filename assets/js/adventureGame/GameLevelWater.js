@@ -1,6 +1,6 @@
 import GameEnv from './GameEnv.js';
 import Background from './Background.js';
-import Npc from './Npc.js';
+import { Npc } from './Npc.js';
 import Character from './Character.js';
 import Player from './Player.js';
 import Key from './Key.js';

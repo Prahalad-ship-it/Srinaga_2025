@@ -118,4 +118,29 @@ class Npc extends Character {
     }
 }
 
-export default Npc;
+class CompassNpc extends Npc {
+    constructor(data = null) {
+        super(data);
+        this.quizType = "compass"; // Set a unique quiz type for the compass
+        this.loadQuizData();
+    }
+
+    loadQuizData() {
+        this.quiz = "Compass Quiz";
+        this.questions = [
+            "Which direction does a compass needle point?\n1. North\n2. South\n3. East\n4. West",
+            "What is the main use of a compass?\n1. Navigation\n2. Cooking\n3. Writing\n4. Painting"
+        ];
+        this.answers = ["North", "Navigation"];
+    }
+
+    handleKeyDown({ key }) {
+        if (key === 'w') {
+            this.shareQuizQuestion();
+        } else {
+            super.handleKeyDown({ key });
+        }
+    }
+}
+
+export { Npc, CompassNpc };
