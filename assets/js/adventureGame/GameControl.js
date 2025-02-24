@@ -118,6 +118,8 @@ const GameControl = {
         for (let index = GameEnv.gameObjects.length - 1; index >= 0; index--) {
             GameEnv.gameObjects[index].destroy();
         }
+        // Stop background music
+        GameEnv.stopAllSounds();
         // Move to the next level
         this.currentLevelIndex++;
         // Go back to the loadLevel function

@@ -184,6 +184,47 @@ class GameEnv {
         console.log("🔑 The key is now unlocked and can be collected!");
         // Additional logic to give the player the key could go here
     }
+
+    /**
+     * Play a sound by its ID in a loop.
+     * 
+     * @static
+     * @param {string} id - The ID of the sound element.
+     */
+    static loopSound(id) {
+        const sound = document.getElementById(id);
+        sound.loop = true;
+        sound.play();
+    }
+
+    /**
+     * Stop all sounds.
+     * 
+     * @static
+     */
+    static stopAllSounds() {
+        const sounds = document.getElementsByTagName('audio');
+        for (let sound of sounds) {
+            sound.pause();
+            sound.currentTime = 0;
+        }
+    }
+
+    // Play a sound by its ID in a loop
+    static loopSound(id) {
+        const sound = document.getElementById(id);
+        sound.loop = true;
+        sound.play();
+    }
+
+    // Stop all sounds
+    static stopAllSounds() {
+        const sounds = document.getElementsByTagName('audio');
+        for (let sound of sounds) {
+            sound.pause();
+            sound.currentTime = 0;
+        }
+    }
 }
 
 export default GameEnv;

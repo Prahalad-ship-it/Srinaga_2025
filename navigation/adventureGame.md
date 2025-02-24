@@ -104,6 +104,9 @@ permalink: /gamify/adventureGame
     <ul id="npcTrackerList"></ul>
 </div>
 
+<!-- Audio for music -->
+<audio id="everlong" src="{{site.baseurl}}/assets/audio/Hu.mp3" preload="auto"></audio>
+
 <script type="module">
     import GameControl from '{{site.baseurl}}/assets/js/adventureGame/GameControl.js';
     import Prompt from '{{site.baseurl}}/assets/js/adventureGame/Prompt.js';
