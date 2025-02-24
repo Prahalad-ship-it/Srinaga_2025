@@ -71,6 +71,32 @@ class GameLevelDesert {
       hitbox: { widthPercentage: 0.3, heightPercentage: 0.3 }
     };
 
+    
+  
+ // NPC data for Octocat
+ const sprite_src_octocat = path + "/images/gamify/octocat.png"; // be sure to include the path
+ const sprite_data_octocat = {
+   id: 'Octocat',
+   greeting: "Hi there I am Octocat the Bear Protecter This bear is kind talk to winnie the pooh and do the quiz and learn about Yellowstone :D",
+   src: sprite_src_octocat,
+   SCALE_FACTOR: 10,  // Adjust this based on your scaling needs
+   ANIMATION_RATE: 50,
+   pixels: {height: 301, width: 801},
+   INIT_POSITION: { x: (width / 4), y: (height / 4)},
+   orientation: {rows: 1, columns: 4 },
+   down: {row: 0, start: 0, columns: 3 },  // This is the stationary npc, down is default 
+   hitbox: { widthPercentage: 0.1, heightPercentage: 0.1 },
+   // GitHub command quiz 
+   quiz: { 
+     title: "Yellowstone Quiz",
+     questions: [
+       "What is the name of the massive volcanic crater found in Yellowstone?\n1. Yellowstone Caldera\n2. Mount St. Helens\n3. Mount Fuji\n4. Crater Lake",
+      "Yellowstone is home to which of the following geothermal features?\n1. Hot Springs\n2. Caves\n3. Lava Tubes\n4. Volcanoes",
+     ] 
+   }
+}
+
+
     const sprite_src_robot = path + "/images/gamify/robot.png"; // be sure to include the path
     const sprite_data_robot = {
         id: 'Robot',
@@ -144,7 +170,8 @@ class GameLevelDesert {
       { class: Npc, data: sprite_data_robot },
       { class: Npc, data: sprite_data_bear },
       { class: Compass, data: compass_data },
-      { class: Key, data: key_data }
+      { class: Key, data: key_data },
+      { class: Npc, data: sprite_data_octocat },
     ];
   }
 }
