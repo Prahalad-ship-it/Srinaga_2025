@@ -1,7 +1,6 @@
 import GameEnv from "./GameEnv.js";
 import Character from "./Character.js";
 import Prompt from "./Prompt.js";
-import Key from "./Key.js"; // Import Key class
 
 class Npc extends Character {
     constructor(data = null) {

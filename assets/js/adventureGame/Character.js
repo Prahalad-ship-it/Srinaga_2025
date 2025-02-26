@@ -41,9 +41,9 @@ class Character extends GameObject {
     /**
      * The constructor method is called when a new Player object is created.
      * 
-     * @param {Object|null} data - The sprite data for the object. If null, a default red square is used.
+     * @param {Object} data - The sprite data for the object.
      */
-    constructor(data = null) {
+    constructor(data) {
         super();
         this.state = {
             ...this.state,
@@ -87,7 +87,8 @@ class Character extends GameObject {
             this.direction = 'down'; // Initial direction
             this.spriteData = data;
         } else {
-            throw new Error('Sprite data is required');
+            console.error('Sprite data is required');
+            return;
         }
 
         // Initialize the object's position and velocity
