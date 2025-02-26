@@ -1,145 +1,79 @@
 import GameEnv from "./GameEnv.js";
 import Character from "./Character.js";
 import Prompt from "./Prompt.js";
-
 class Npc extends Character {
     constructor(data = null) {
         super(data);
-        
-        // Initialize quiz data based on NPC type (either Bison or Tux)
-        this.quizType = data?.quiz?.type || "bison"; // Default to "bison"
-        this.loadQuizData();
-        
+        this.quiz = data?.quiz?.title; // Quiz title
+        this.questions = Prompt.shuffleArray(data?.quiz?.questions || []); // Shuffle questions
         this.currentQuestionIndex = 0; // Start from the first question
-        this.correctAnswers = 0; // Track correct answers
         this.alertTimeout = null;
-        this.rickRollAudio = document.getElementById("rickRollAudio"); // Reference to the audio element
-        
         this.bindEventListeners();
     }
-
-    loadQuizData() {
-        if (this.quizType === "bison") {
-            this.quiz = "Yellowstone Quiz (Bison)";
-            this.questions = [
-                "What is the name of the massive volcanic crater found in Yellowstone?\n1. Yellowstone Caldera\n2. Mount St. Helens\n3. Mount Fuji\n4. Crater Lake",
-                "Yellowstone is home to which of the following geothermal features?\n1. Hot Springs\n2. Caves\n3. Lava Tubes\n4. Volcanoes",
-                "How many species of mammals can be found in Yellowstone?\n1. Over 60 species\n2. 10 species\n3. 100 species\n4. 30 species",
-                "Which geyser is the largest in the world?\n1. Steamboat Geyser\n2. Old Faithful\n3. Grand Geyser\n4. Morning Glory Pool",
-                "What is the elevation of Yellowstone National Park?\n1. 7,000 feet\n2. 4,000 feet\n3. 9,000 feet\n4. 5,000 feet"
-            ];
-            this.answers = [
-                "Yellowstone Caldera", "Hot Springs", "Over 60 species", "Steamboat Geyser", "7,000 feet"
-            ];
-        } else if (this.quizType === "tux") {
-            this.quiz = "Yellowstone Quiz (Tux)";
-            this.questions = [
-                "What year was Yellowstone National Park established?\n1. 1872\n2. 1800\n3. 1900\n4. 1750",
-                "Which of these animals is native to Yellowstone?\n1. Bison\n2. Kangaroo\n3. Penguin\n4. Elephant",
-                "What is the name of the famous geyser in Yellowstone?\n1. Old Faithful\n2. Big Blast\n3. Steamy Joe\n4. Hot Springs"
-            ];
-            this.answers = ["1872", "Bison", "Old Faithful"];
-        }
-    }
-
+    /**
+     * Override the update method to draw the NPC.
+     * This NPC is stationary, so the update method only calls the draw method.
+     */
     update() {
         this.draw();
     }
-
+    /**
+     * Bind key event listeners for proximity interaction.
+     */
     bindEventListeners() {
         addEventListener('keydown', this.handleKeyDown.bind(this));
         addEventListener('keyup', this.handleKeyUp.bind(this));
     }
-
+    /**
+     * Handle keydown events for interaction.
+     * @param {Object} event - The keydown event.
+     */
     handleKeyDown({ key }) {
         switch (key) {
             case 'e': // Player 1 interaction
             case 'u': // Player 2 interaction
                 this.shareQuizQuestion();
                 break;
-            case 'i': // Play Rick Roll
-                this.rickRollAudio.play();
-                break;
         }
     }
-
+    /**
+     * Handle keyup events to stop player actions.
+     * @param {Object} event - The keyup event.
+     */
     handleKeyUp({ key }) {
         if (key === 'e' || key === 'u') {
+            // Clear any active timeouts when the interaction key is released
             if (this.alertTimeout) {
                 clearTimeout(this.alertTimeout);
                 this.alertTimeout = null;
             }
         }
     }
-
+    /**
+     * Get the next question in the shuffled array.
+     * @returns {string} - The next quiz question.
+     */
     getNextQuestion() {
         const question = this.questions[this.currentQuestionIndex];
-        this.currentQuestionIndex = (this.currentQuestionIndex + 1) % this.questions.length;
+        this.currentQuestionIndex = (this.currentQuestionIndex + 1) % this.questions.length; // Cycle through questions
         return question;
     }
-
+    /**
+     * Handle proximity interaction and share a quiz question.
+     */
     shareQuizQuestion() {
         const players = GameEnv.gameObjects.filter(obj => obj.state.collisionEvents.includes(this.spriteData.id));
         const hasQuestions = this.questions.length > 0;
         if (players.length > 0 && hasQuestions) {
             players.forEach(player => {
                 if (!Prompt.isOpen) {
+                    // Assign this NPC as the current NPC in the Prompt system
                     Prompt.currentNpc = this;
+                    // Open the Prompt panel with this NPC's details
                     Prompt.openPromptPanel(this);
                 }
             });
         }
     }
-
-    handleAnswer(playerAnswer) {
-        const correctAnswer = this.answers[this.currentQuestionIndex];
-        const isCorrect = playerAnswer === correctAnswer;
-        if (isCorrect) {
-            this.correctAnswers++;
-            console.log("✅ Correct Answer!");
-        } else {
-            console.log("❌ Incorrect Answer.");
-        }
-        this.checkQuizCompletion();
-    }
-
-    checkQuizCompletion() {
-        if (this.correctAnswers === this.questions.length) {
-            console.log("✅ All questions answered correctly! Granting the key...");
-            this.giveKey();
-        }
-    }
-
-    giveKey() {
-        const key = new Key({ x: this.x, y: this.y });
-        GameEnv.gameObjects.push(key);
-        console.log("🔑 Key has been added to the game!");
-    }
 }
-
-class CompassNpc extends Npc {
-    constructor(data = null) {
-        super(data);
-        this.quizType = "compass"; // Set a unique quiz type for the compass
-        this.loadQuizData();
-    }
-
-    loadQuizData() {
-        this.quiz = "Compass Quiz";
-        this.questions = [
-            "Which direction does a compass needle point?\n1. North\n2. South\n3. East\n4. West",
-            "What is the main use of a compass?\n1. Navigation\n2. Cooking\n3. Writing\n4. Painting"
-        ];
-        this.answers = ["North", "Navigation"];
-    }
-
-    handleKeyDown({ key }) {
-        if (key === 'w') {
-            this.shareQuizQuestion();
-        } else {
-            super.handleKeyDown({ key });
-        }
-    }
-}
-
-export { Npc, CompassNpc };
+export default Npc;

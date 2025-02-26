@@ -2,11 +2,7 @@
 import GameEnv from './GameEnv.js';
 import Background from './Background.js';
 import Player from './Player.js';
-import { Npc } from './Npc.js';
-import QuestNpc from './QuestNpc.js';
-import Quests from './Quests.js';
-import QuestSystem from './QuestSystem.js';
-import ScavengerObject from './ScavengerObject.js';
+import Npc from './Npc.js';
 
 class GameLevelDesert {
   constructor(path) {
@@ -16,6 +12,7 @@ class GameLevelDesert {
     let width = GameEnv.innerWidth;
     let height = GameEnv.innerHeight;
 
+
     // Background data
     const image_src_desert = path + "/images/gamify/desert.png"; // be sure to include the path
     const image_data_desert = {
@@ -24,6 +21,7 @@ class GameLevelDesert {
         src: image_src_desert,
         pixels: {height: 580, width: 1038}
     };
+
 
     // Player data for Chillguy
     const sprite_src_chillguy = path + "/images/gamify/chillguy.png"; // be sure to include the path
@@ -45,6 +43,7 @@ class GameLevelDesert {
         hitbox: { widthPercentage: 0.45, heightPercentage: 0.2 },
         keypress: { up: 87, left: 65, down: 83, right: 68 } // W, A, S, D
     };
+
 
     // NPC data for Tux 
     const sprite_src_tux = path + "/images/gamify/tux.png"; // be sure to include the path
@@ -77,9 +76,11 @@ class GameLevelDesert {
         }
       };
 
-    // NPC data for Octocat
-    const sprite_src_octocat = path + "/images/gamify/octocat.png"; // be sure to include the path
-    const sprite_data_octocat = {
+
+
+      // NPC data for Octocat
+      const sprite_src_octocat = path + "/images/gamify/octocat.png"; // be sure to include the path
+      const sprite_data_octocat = {
         id: 'Octocat',
         greeting: "Hi I am Octocat! I am the GitHub code code code collaboration mascot",
         src: sprite_src_octocat,
@@ -107,6 +108,7 @@ class GameLevelDesert {
           ] 
         }
     }
+  
 
     const sprite_src_robot = path + "/images/gamify/robot.png"; // be sure to include the path
     const sprite_data_robot = {
@@ -138,33 +140,36 @@ class GameLevelDesert {
         }
       };
 
-    // NPC data for the quests npc
-const SpriteSrcFancyGuy = path + "/images/gamify/stockguy.png"; // be sure to include the path
-const SpriteDataFancyGuy = {
-    id: 'FancyGuy',
-    greeting: "Hey there! I give people stuff to do to make a rich! What can I do for you?",
-    src: SpriteSrcFancyGuy,
+  /*  // NPC data for HTML Hank
+const sprite_src_htmlhank = path + "/images/gamify/htmlhank.png"; // be sure to include the path
+const sprite_data_htmlhank = {
+    id: 'HTML Hank',
+    greeting: "Hey there! I'm HTML Hank, the web architect. Let's build some awesome webpages together!",
+    src: sprite_src_html_hank,
     SCALE_FACTOR: 8,  // Adjust this based on your scaling needs
     ANIMATION_RATE: 60,
-    pixels: { height: 882, width: 1356 },
-    INIT_POSITION: { x: (width / 1.15), y: (height / 3) },
+    pixels: { height: 350, width: 550 },
+    INIT_POSITION: { x: (width / 2), y: (height / 2) },
     orientation: { rows: 2, columns: 4 },
-    down: { row: 0, start: 0, columns: 1 },  // This is the stationary NPC, down is default
+    down: { row: 0, start: 0, columns: 3 },  // This is the stationary NPC, down is default
     hitbox: { widthPercentage: 0.1, heightPercentage: 0.2 },
-};
-const ScavengerObjectsrc = path + "/images/gamify/stockguy.png"; // be sure to include the path
-const ScavengerFindObject = {
-    id: 'ScavengerObject',
-    src: ScavengerObjectsrc,
-    greeting: "You have collected an object",
-    SCALE_FACTOR: 8,  // Adjust this based on your scaling needs
-    ANIMATION_RATE: 60,
-    pixels: { height: 882, width: 1356 },
-    INIT_POSITION: { x: (width / 2.), y: (height / 4) },
-    orientation: { rows: 2, columns: 4 },
-    down: { row: 0, start: 0, columns: 1 },  // This is the stationary NPC, down is default
-    hitbox: { widthPercentage: 0.1, heightPercentage: 0.2 },
-};  
+
+    // HTML & CSS quiz
+    quiz: { 
+        title: "HTML & CSS Mastery Quiz",
+        questions: [
+            "What does HTML stand for?\n1. HyperText Markup Language\n2. HighText Machine Learning\n3. Hyper Transfer Markup Language\n4. Hyper Tool Markup Language",
+            "Which HTML tag is used to define the largest heading?\n1. <h1>\n2. <h6>\n3. <header>\n4. <h0>",
+            "Which tag is used to create a hyperlink in HTML?\n1. <a>\n2. <link>\n3. <href>\n4. <url>",
+            "Which CSS property is used to change text color?\n1. color\n2. text-color\n3. font-color\n4. bgcolor",
+            "Which unit is relative to the font size of the root element in CSS?\n1. rem\n2. em\n3. px\n4. vh",
+            "What is the correct way to reference an external CSS file?\n1. <link rel='stylesheet' href='styles.css'>\n2. <style src='styles.css'>\n3. <css file='styles.css'>\n4. <script href='styles.css'>",
+            "How do you center an element horizontally using CSS?\n1. margin: auto;\n2. align: center;\n3. text-align: middle;\n4. float: center;",
+            "Which HTML tag is used for creating an unordered list?\n1. <ul>\n2. <ol>\n3. <list>\n4. <li>",
+            "What is the purpose of the <meta> tag in HTML?\n1. To provide metadata about the document\n2. To create a navigation menu\n3. To define the main content area\n4. To embed images"
+        ]
+    }
+}; */
 
     // List of objects defnitions for this level
     this.objects = [
@@ -173,8 +178,10 @@ const ScavengerFindObject = {
       { class: Npc, data: sprite_data_tux },
       { class: Npc, data: sprite_data_octocat },
       { class: Npc, data: sprite_data_robot },
-          { class: Npc, data: SpriteDataFancyGuy}
-        ];
-      }
-    }
+     // { class: Npc, data: sprite_data_htmlhank }, 
+    ];
+  }
+
+}
+
 export default GameLevelDesert;

@@ -14,9 +14,6 @@ export class Background extends GameObject {
             this.image = null;
         }
         GameEnv.gameObjects.push(this);
-
-        // Start the background music in loop
-        GameEnv.loopSound('everlong');
     }
 
     /** This method draws to GameEnv context, primary background
