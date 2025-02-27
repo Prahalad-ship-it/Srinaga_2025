@@ -1,189 +1,271 @@
-// GameControl.js
-import GameLevel from "./GameLevel.js";
-import GameLevelWater from "./GameLevelWater.js";
-import GameLevelDesert from "./GameLevelDesert.js";
+import GameEnv from './GameEnv.js';
+import GameLevelWater from './GameLevelWater.js';
+import GameLevelDesert from './GameLevelDesert.js';
+import { getStats } from "./StatsManager.js";
 
-class GameControl {
-    /**
-     * GameControl class to manage the game levels and transitions
-     * @param {*} path - The path to the game assets
-     * @param {*} levelClasses - The classes of for each game level
-     */
-    constructor(path, levelClasses = [GameLevelDesert, GameLevelWater]) {
-        // GameControl properties
-        this.path = path;
-        this.levelClasses = levelClasses;
-        this.currentLevel = null;
+
+
+const createStatsUI = () => {
+    const statsContainer = document.createElement('div');
+    statsContainer.id = 'stats-container';
+    statsContainer.style.position = 'fixed';
+    statsContainer.style.top = '10px';
+    statsContainer.style.right = '10px';
+    statsContainer.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+    statsContainer.style.color = 'white';
+    statsContainer.style.padding = '10px';
+    statsContainer.style.borderRadius = '5px';
+    statsContainer.innerHTML = `
+        <div>Balance: <span id="balance">0</span></div>
+        <div>Chat Score: <span id="chatScore">0</span></div>
+        <div>Questions Answered: <span id="questionsAnswered">0</span></div>
+    `;
+    document.body.appendChild(statsContainer);
+};
+
+/**
+ * The GameControl object manages the game.
+ * 
+ * This code uses the JavaScript "object literal pattern" which is nice for centralizing control logic.
+ * 
+ * The object literal pattern is a simple way to create singleton objects in JavaScript.
+ * It allows for easy grouping of related functions and properties, making the code more organized and readable.
+ * In the context of GameControl, this pattern helps centralize the game's control logic, 
+ * making it easier to manage game states, handle events, and maintain the overall flow of the game.
+ * 
+ * @type {Object}
+ * @property {Player} turtle - The player object.
+ * @property {Player} fish 
+ * @property {function} start - Initialize game assets and start the game loop.
+ * @property {function} gameLoop - The game loop.
+ * @property {function} resize - Resize the canvas and player object when the window is resized.
+ */
+const GameControl = {
+    intervalID: null, // Variable to hold the timer interval reference
+    localStorageTimeKey: "localTimes",
+    currentPass: 0,
+    currentLevelIndex: 0,
+    levelClasses: [],
+    path: '',
+
+    start: function(path) {
+        GameEnv.create();
+        this.levelClasses = [GameLevelDesert, GameLevelWater];
         this.currentLevelIndex = 0;
-        this.gameLoopCounter = 0;
-        this.isPaused = false;
-        this.exitKeyListener = this.handleExitKey.bind(this);
-        this.gameOver = null; // Callback for when the game is over 
-        this.savedCanvasState = []; // Save the current levels game elements 
-    }
-
-    /**
-     * Starts the game by 
-     * 1. Adding an exit key listener
-     * 2. Transitioning to the first level
-     */
-    start() {
+        this.path = path;
         this.addExitKeyListener();
-        this.transitionToLevel();
-    }
-
-    /**
-     * Transitions to the next level in the level by
-     * 1. Creating a new GameLevel instance
-     * 2. Creating the level using the GameLevelClass
-     * 3. Starting the game loop
-     */ 
-    transitionToLevel() {
-        const GameLevelClass = this.levelClasses[this.currentLevelIndex];
-        this.currentLevel = new GameLevel(this);
-        this.currentLevel.create(GameLevelClass);
+        this.loadLevel();
+    },
+    
+    loadLevel: function() {
+        if (this.currentLevelIndex >= this.levelClasses.length) {
+            this.stopTimer();
+            return;
+        }
+        GameEnv.continueLevel = true;
+        GameEnv.gameObjects = [];
+        this.currentPass = 0;
+        const LevelClass = this.levelClasses[this.currentLevelIndex];
+        const levelInstance = new LevelClass(this.path);
+        this.loadLevelObjects(levelInstance);
+    },
+    
+    loadLevelObjects: function(gameInstance) {
+        this.initStatsUI();
+        // Instantiate the game objects
+        for (let object of gameInstance.objects) {
+            if (!object.data) object.data = {};
+            new object.class(object.data);
+        }
+        // Start the game loop
         this.gameLoop();
-    }
+        getStats();
+    },
 
-    /**
-     * The main game loop 
-     * 1. Updates the current level
-     * 2. Handles the level start
-     * 3. Requests the next frame
-     */
-    gameLoop() {
-        // If the level is not set to continue, handle the level end condition 
-        if (!this.currentLevel.continue) {
+    gameLoop: function() {
+        // Base case: leave the game loop 
+        if (!GameEnv.continueLevel) {
             this.handleLevelEnd();
             return;
         }
-        // If the game level is paused, stop the game loop
-        if (this.isPaused) {
-            return;
+        // Nominal case: update the game objects 
+        GameEnv.clear();
+        for (let object of GameEnv.gameObjects) {
+            object.update();  // Update the game objects
         }
-        this.currentLevel.update();
-        this.handleInLevelLogic();
+        this.handleLevelStart();
+        // Recursively call this function at animation frame rate
         requestAnimationFrame(this.gameLoop.bind(this));
-    }
+    },
 
-    /**
-     * This method is a placeholder for future logic that needs to be executed during the game loop.
-     * For example, a starting page or time-based events
-     */
-    handleInLevelLogic() {
-        // This condition is established for future starting page logic
-        if (this.currentLevelIndex === 0 && this.gameLoopCounter === 0) {
-            console.log("Start Level.");
+    handleLevelStart: function() {
+        // First time message for level 0, delay 10 passes
+        if (this.currentLevelIndex === 0 && this.currentPass === 10) {
+            alert("Start Level.");
         }
-        // This counter is established for future time-based logic, like frames per second
-        this.gameLoopCounter++;
-    }
+        // Recursion tracker
+        this.currentPass++;
+    },
 
-    /**
-     * Handles the level end by
-     * 1. Destroying the current level
-     * 2. Calling the gameOver callback if it exists
-     * 3. Transitioning to the next level
-     */
-    handleLevelEnd() {
-        // Alert the user that the level has ended
+    handleLevelEnd: function() {
+        // More levels to play 
         if (this.currentLevelIndex < this.levelClasses.length - 1) {
             alert("Level ended.");
-        } else {
-            alert("All levels completed.");
+        } else { // All levels completed
+            alert("Game over. All levels completed.");
         }
-        this.currentLevel.destroy();
-        // Call the gameOver callback if it exists
-        if (this.gameOver) {
-            this.gameOver();
-        } else {
-            this.currentLevelIndex++;
-            this.transitionToLevel();
+        // Tear down the game environment
+        for (let index = GameEnv.gameObjects.length - 1; index >= 0; index--) {
+            GameEnv.gameObjects[index].destroy();
         }
-    }
-
-    /**
-     * Exit key handler to end the current level
-     * @param {*} event - The keydown event object
-     */
-    handleExitKey(event) {
-        if (event.key === 'Escape') {
-            this.currentLevel.continue = false;
+        // Move to the next level
+        this.currentLevelIndex++;
+        // Go back to the loadLevel function
+        this.loadLevel();
+    },
+    
+    resize: function() {
+        // Resize the game environment
+        GameEnv.resize();
+        // Resize the game objects
+        for (let object of GameEnv.gameObjects) {
+            object.resize(); // Resize the game objects
         }
-    }
+    },
 
-    // Helper method to add exit key listener
-    addExitKeyListener() {
-        document.addEventListener('keydown', this.exitKeyListener);
-    }
-
-    // Helper method to remove exit key listener
-    removeExitKeyListener() {
-        document.removeEventListener('keydown', this.exitKeyListener);
-    }
-
-    // Helper method to save the current canvas id and image data in the game container
-    saveCanvasState() {
-        const gameContainer = document.getElementById('gameContainer');
-        const canvasElements = gameContainer.querySelectorAll('canvas');
-        this.savedCanvasState = Array.from(canvasElements).map(canvas => {
-            return {
-                id: canvas.id,
-                imageData: canvas.getContext('2d').getImageData(0, 0, canvas.width, canvas.height)
-            };
-        });
-    }
-
-    // Helper method to hide the current canvas state in the game container
-    hideCanvasState() {
-        const gameContainer = document.getElementById('gameContainer');
-        const canvasElements = gameContainer.querySelectorAll('canvas');
-        canvasElements.forEach(canvas => {
-            if (canvas.id !== 'gameCanvas') {
-                canvas.style.display = 'none';
+    addExitKeyListener: function() {
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                GameEnv.continueLevel = false;
             }
         });
-    }
-
-    // Helper method to restore the hidden canvas item to be visible
-    showCanvasState() {
-        const gameContainer = document.getElementById('gameContainer');
-        this.savedCanvasState.forEach(hidden_canvas => {
-            const canvas = document.getElementById(hidden_canvas.id);
-            if (canvas) {
-                canvas.style.display = 'block';
-                canvas.getContext('2d').putImageData(hidden_canvas.imageData, 0, 0);
-            }
-        });
-    }
+    },
 
     /**
-     * Game level in Game Level helper method to pause the underlying game level
-     * 1. Set the current game level to paused
-     * 2. Remove the exit key listener
-     * 3. Save the current canvas game containers state
-     * 4. Hide the current canvas game containers
-     */
-    pause() {
-        this.isPaused = true;
-        this.removeExitKeyListener();
-        this.saveCanvasState();
-        this.hideCanvasState();
-     }
+     * Updates and displays the game timer.
+     * @function updateTimer
+     * @memberof GameControl
+     */ 
+    saveTime(time, score) {
+        if (time == 0) return;
+        const userID = GameEnv.userID
+        const oldTable = this.getAllTimes()
 
-     /**
-      * Game level in Game Level helper method to resume the underlying game level
-      * 1. Set the current game level to not be paused
-      * 2. Add the exit key listener
-      * 3. Show the current canvas game containers
-      * 4. Start the game loop
-      */
-    resume() {
-        this.isPaused = false;
-        this.addExitKeyListener();
-        this.showCanvasState();
-        this.gameLoop();
-    }
-}
+        const data = {
+            userID: userID,
+            time: time,
+            score: score
+        }
+
+        if (!oldTable) {
+            localStorage.setItem(this.localStorageTimeKey, JSON.stringify([data]))
+            return;
+        }
+
+        oldTable.push(data)
+
+        localStorage.setItem(this.localStorageTimeKey, JSON.stringify(oldTable))
+    },
+    getAllTimes() {
+        let timeTable = null;
+
+        try {
+            timeTable = localStorage.getItem(this.localStorageTimeKey);
+        }
+        catch (e) {
+            return e;
+        }
+
+        return JSON.parse(timeTable)
+    },
+    updateTimer() {
+        const time = GameEnv.time
+
+        if (GameEnv.timerActive) {
+            const newTime = time + GameEnv.timerInterval
+            GameEnv.time = newTime                
+            if (document.getElementById('timeScore')) {
+                document.getElementById('timeScore').textContent = (time/1000).toFixed(2) 
+            }
+                return newTime
+            }
+            if (document.getElementById('timeScore')) {
+                document.getElementById('timeScore').textContent = (time/1000).toFixed(2) 
+            }
+    },   
+    /**
+     * Starts the game timer.
+     * @function startTimer
+     * @memberof GameControl
+     */
+    startTimer() {
+        if (GameEnv.timerActive) {
+            console.warn("TIMER ACTIVE: TRUE, TIMER NOT STARTED")
+            return;
+        }
+        
+        this.intervalId = setInterval(() => this.updateTimer(), GameEnv.timerInterval);
+        GameEnv.timerActive = true;
+    },
+
+    /**
+     * Stops the game timer.
+     * @function stopTimer
+     * @memberof GameControl
+     */
+    stopTimer() {   
+        if (!GameEnv.timerActive) return;
+        
+        this.saveTime(GameEnv.time, GameEnv.coinScore)
+
+        GameEnv.timerActive = false
+        GameEnv.time = 0;
+        GameEnv.coinScore = 0;
+        this.updateCoinDisplay()
+        clearInterval(this.intervalID)
+    },
+
+    saveTime() {
+        const data = {
+            userID: GameEnv.userID,
+            time: GameEnv.time - 10,
+            coinScore: GameEnv.coinScore
+        }
+
+        const currDataList = JSON.parse(localStorage.getItem(this.localStorageTimeKey))
+
+        if (!currDataList || !Array.isArray(currDataList)) {
+            localStorage.setItem(this.localStorageTimeKey, JSON.stringify([data]))
+            return;
+        }
+
+        currDataList.push(data)
+        
+        localStorage.setItem(this.localStorageTimeKey, JSON.stringify(currDataList))
+    },  
+
+    // Initialize UI for game stats
+    initStatsUI: function() {
+        const statsContainer = document.createElement('div');
+        statsContainer.id = 'stats-container';
+        statsContainer.style.position = 'fixed';
+        statsContainer.style.top = '75px'; 
+        statsContainer.style.right = '10px';
+        statsContainer.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+        statsContainer.style.color = 'white';
+        statsContainer.style.padding = '10px';
+        statsContainer.style.borderRadius = '5px';
+        statsContainer.innerHTML = `
+            <div>Balance: <span id="balance">0</span></div>
+            <div>Chat Score: <span id="chatScore">0</span></div>
+            <div>Questions Answered: <span id="questionsAnswered">0</span></div>
+        `;
+        document.body.appendChild(statsContainer);
+    },
+
+};
+
+// Detect window resize events and call the resize function.
+window.addEventListener('resize', GameControl.resize.bind(GameControl));
 
 export default GameControl;

@@ -1,3 +1,4 @@
+import GameEnv from './GameEnv.js';
 import Character from './Character.js';
 
 // Define non-mutable constants as defaults
@@ -21,10 +22,10 @@ class Player extends Character {
      * 
      * @param {Object|null} data - The sprite data for the object. If null, a default red square is used.
      */
-    constructor(data = null, gameEnv = null) {
-        super(data, gameEnv);
+    constructor(data = null) {
+        super(data);
         this.keypress = data?.keypress || {up: 87, left: 65, down: 83, right: 68};
-        this.bindMovementKeyListners();
+        this.bindEventListeners();
     }
 
 
@@ -34,7 +35,7 @@ class Player extends Character {
      * This method binds keydown and keyup event listeners to handle object movement.
      * The .bind(this) method ensures that 'this' refers to the object object.
      */
-    bindMovementKeyListners() {
+    bindEventListeners() {
         addEventListener('keydown', this.handleKeyDown.bind(this));
         addEventListener('keyup', this.handleKeyUp.bind(this));
     }

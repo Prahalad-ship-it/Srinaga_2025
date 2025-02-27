@@ -5,30 +5,24 @@ import GameObject from './GameObject.js';
  * 
  */
 export class Background extends GameObject {
-    constructor(data = null, gameEnv = null) {
-        super(gameEnv);
+    constructor(data = null) {
+        super();
         if (data.src) {
             this.image = new Image();
             this.image.src = data.src;
         } else {
             this.image = null;
         }
-    }
-
-    /** For primary background, update is the same as draw
-     * 
-     */
-    update() {
-        this.draw();
+        GameEnv.gameObjects.push(this);
     }
 
     /** This method draws to GameEnv context, primary background
      * 
      */
     draw() {
-        const ctx = this.gameEnv.ctx;
-        const width = this.gameEnv.innerWidth;
-        const height = this.gameEnv.innerHeight;
+        const ctx = GameEnv.ctx;
+        const width = GameEnv.innerWidth;
+        const height = GameEnv.innerHeight;
 
         if (this.image) {
             // Draw the background image scaled to the canvas size
@@ -40,6 +34,13 @@ export class Background extends GameObject {
         }
     }
 
+    /** For primary background, update is the same as draw
+     * 
+     */
+    update() {
+        this.draw();
+    }
+
     /** For primary background, resize is the same as draw
      *
      */
@@ -48,12 +49,12 @@ export class Background extends GameObject {
     }
 
     /** Destroy Game Object
-     * remove object from this.gameEnv.gameObjects array
+     * remove object from GameEnv.gameObjects array
      */
     destroy() {
-        const index = this.gameEnv.gameObjects.indexOf(this);
+        const index = GameEnv.gameObjects.indexOf(this);
         if (index !== -1) {
-            this.gameEnv.gameObjects.splice(index, 1);
+            GameEnv.gameObjects.splice(index, 1);
         }
     }
     
