@@ -2,7 +2,7 @@ import Character from "./Character.js";
 import GameEnv from "./GameEnv.js";
 import Player from './Player.js';
 import GameControl from "./GameControl.js";
-import QuestSystem from "../problem solver/QuestSystem.js";
+import QuestSystem from "./QuestSystem.js";
 import GameLevelDesert from "./GameLevelDesert.js";
 
 class ScavengerObject extends Character{

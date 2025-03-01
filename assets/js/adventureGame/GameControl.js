@@ -2,6 +2,8 @@ import GameEnv from './GameEnv.js';
 import GameLevelWater from './GameLevelWater.js';
 import GameLevelDesert from './GameLevelDesert.js';
 import { getStats } from "./StatsManager.js";
+import Quests from './Quests.js';
+import { QuestSystem } from './QuestSystem.js';
 
 
 
@@ -77,6 +79,7 @@ const GameControl = {
             if (!object.data) object.data = {};
             new object.class(object.data);
         }
+        gameInstance.quests.forEach(quest => QuestSystem.addQuest(quest));
         // Start the game loop
         this.gameLoop();
         getStats();

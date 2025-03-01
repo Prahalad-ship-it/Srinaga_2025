@@ -77,6 +77,26 @@ permalink: /gamify/adventureGame
     color: black;
     z-index: 1001;
 }
+#questBox {
+    position: fixed; /* or absolute, depending on your layout */
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    background-color: white;
+    border: 2px solid #4682b4;
+    border-radius: 12px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: black; /* Ensure text color is black */
+    z-index: 1002; /* Ensure this is higher than other elements */
+}
+
+#questBox h2 {
+    color: black; /* Ensure h2 text color is black */
+}
 </style>
 
 <!-- Score & Stats -->
@@ -179,3 +199,16 @@ permalink: /gamify/adventureGame
         updateNpcTracker();
     }
 </script>
+
+
+
+<script type="module">
+    //Quest system
+
+    import QuestSystem from '{{site.baseurl}}/assets/js/adventureGame/QuestSystem.js';
+    QuestSystem.load()
+</script>
+
+<div id="questBox">
+    <h2 id="questMessage"></h2>
+</div>

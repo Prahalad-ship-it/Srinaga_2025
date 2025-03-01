@@ -1,5 +1,4 @@
-import { QuestSystem } from './QuestSystem.js';
-
+import Quest from "./Quests.js";
 export class QuestSystem {
     static quests = []; // This contains all the quests that are currently active, mainly contains current level quests
 
