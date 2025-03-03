@@ -50,6 +50,7 @@ an eg of burndown list ![burndowneg.png](image-9.png)
 
 The game changes were weird as I first worked on having background and adding music along with working on compass but I felt It wasn't enough so I went back and forth and the draw IO sucked so I decided that to look at other people IDea and ran into William idea and decided i don't care if it challenge I will work hard on it and implment in my game and here is my new draw io ![drawio](image-10.png)
 
+
 | Topic                   | Score (0/1) | Reflection  |
 |-------------------------|------------|-------------|
 | **OOP**                | **0.75**    | "OOP was used in some places like ScavengerObject, but I completely ignored it in Quest.js where it was actually needed.".js. |
