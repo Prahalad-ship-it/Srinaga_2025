@@ -205,7 +205,7 @@ permalink: /gamify/adventureGame
 <script type="module">
     //Quest system
 
-    import QuestSystem from '{{site.baseurl}}/assets/js/adventureGame/QuestSystem.js';
+    import QuestSystem from '{{site.baseurl}}/assets/js/adventureGame/QuestObject.js';
     QuestSystem.load()
 </script>
 

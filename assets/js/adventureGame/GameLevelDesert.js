@@ -4,7 +4,7 @@ import Background from './Background.js';
 import Player from './Player.js';
 import Npc from './Npc.js';
 import Quest from './Quests.js';
-import QuestSystem from './QuestSystem.js';
+import QuestSystem from './QuestObject.js';
 import QuestNpc from './QuestNpc.js';
 import ScavengerObject from './ScavengerObject.js';
 
@@ -183,8 +183,6 @@ const ScavengerFindObject = {
       //{ class: ScavengerObject, data: ScavengerFindObject},
     ];
     this.quests = [
-     Quest.createQuest("Find Me the ingedent I need for my soup", "findsoup", Quest.scavengerQuest([`Soup`])),
-     Quest.createQuest("I lost my rock :(", "findrock", Quest.scavengerQuest([`Rock`])),
      Quest.createQuest("Talk to my friend", "talktfriend", Quest.npcQuest([`Tux`])),
      Quest.createQuest("Talk to my friends", "talktofriends", Quest.npcQuest([`Tux`,`Robot`])),
      Quest.createQuest("Talk to my uncle", "talktouncle", Quest.npcQuest([`Octocat`])),

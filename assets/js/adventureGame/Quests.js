@@ -1,5 +1,5 @@
 import GameEnv from "./GameEnv.js";
-import { QuestSystem } from './QuestSystem.js';
+import { QuestSystem } from './QuestObject.js';
 
 class Quest {
     constructor(name, id, values) {

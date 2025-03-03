@@ -1,6 +1,6 @@
 import GameEnv from './GameEnv.js';
 import Quest from './Quests.js';
-import QuestSystem from "./QuestSystem.js";
+import QuestSystem from "./QuestObject.js";
 
 /**
  * The GameObject class serves as a base class for all game objects.

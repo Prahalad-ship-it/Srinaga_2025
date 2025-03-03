@@ -3,7 +3,7 @@ import GameLevelWater from './GameLevelWater.js';
 import GameLevelDesert from './GameLevelDesert.js';
 import { getStats } from "./StatsManager.js";
 import Quests from './Quests.js';
-import { QuestSystem } from './QuestSystem.js';
+import { QuestSystem } from './QuestObject.js';
 
 
 
