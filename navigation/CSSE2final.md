@@ -50,13 +50,24 @@ an eg of burndown list ![burndowneg.png](image-9.png)
 
 The game changes were weird as I first worked on having background and adding music along with working on compass but I felt It wasn't enough so I went back and forth and the draw IO sucked so I decided that to look at other people IDea and ran into William idea and decided i don't care if it challenge I will work hard on it and implment in my game and here is my new draw io ![drawio](image-10.png)
 
+## the work I liked most
+William's work is well-organized, with each of his blogs structured thoughtfully, unlike Ethan or Cason. He puts effort into his game, which I really appreciate.
 
 | Topic                   | Score (0/1) | Reflection  |
 |-------------------------|------------|-------------|
 | **OOP**                | **0.75**    | "OOP was used in some places like ScavengerObject, but I completely ignored it in Quest.js where it was actually needed.".js. |
 | **Classes (OOP)**       | **0.8**     | I understand classes well, but I overused static methods. This worked for QuestSystem.js but was a poor choice for Quests.js." |
 | **HTML**               | **0.8**    | The quest output looks great, but I left a UI issue—empty text still renders an empty box instead of hiding itself. |
-| **Sprites**            | **0.75**     | All sprites are static, displaying only a single frame. The tux NPC has a wave animation, but I didn't apply animation to anything else. |
+| **Sprites**            | **0.77**     | All sprites are static, displaying only a single frame. The tux NPC has a wave animation, but I didn't apply animation to anything else except replacing the tux. |
 | **Optimization**       | **0.85**     | I reduced unnecessary checks by making quest conditions trigger on collision instead of running every frame. Huge performance boostunnecessary computations. |
 | **Error Handling**     | **0.93**     | "I can efficiently backtrack errors, from simple typos to complex issues spanning multiple JS files. Debugging skills are solid |
 | **Testing & Debugging** | **0.95**     |  methodically tested and debugged, ensuring code sections executed properly, conditions were met, and quests displayed as expected. |
+
+## future imporovment
+
+| Feature            | Changes                |
+|--------------------|------------------------|
+| Quest tracking system  | MAybe making like checklist and automatically  ticks the quests rather than fat box |
+| More Quest Types          | I would with enough time would have created map and made them colelct more quests or interact with Npc |
+| More Npcs | I would with enough time would have had diffrent Npcs with diffrent  animationsn|
+| PLayer Movment |What I could HAve done was make my player slow down and constant rather than speeding up making sure they don't go past NPC |

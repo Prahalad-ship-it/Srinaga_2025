@@ -18,7 +18,7 @@ class GameLevelDesert {
 
 
     // Background data
-    const image_src_desert = path + "/images/gamify/desert.png"; // be sure to include the path
+    const image_src_desert = path + "/images/gamify/Grassland.png"; // be sure to include the path
     const image_data_desert = {
         name: 'desert',
         greeting: "Welcome to the desert!  It is hot and dry here, but there are many adventures to be had!",
@@ -49,12 +49,12 @@ class GameLevelDesert {
     };
 
 
-    // NPC data for Tux 
-    const sprite_src_tux = path + "/images/gamify/Npc.png"; // be sure to include the path
-    const sprite_data_tux = {
-        id: 'Tux',
+    // NPC data for Npc
+    const sprite_src_Npc= path + "/images/gamify/Npc.png"; // be sure to include the path
+    const sprite_data_Npc= {
+        id: 'Npc',
         greeting: "Hi I am Tux, the Linux mascot.  I am very happy to spend some linux shell time with you!",
-        src: sprite_src_tux,
+        src: sprite_src_Npc,
         SCALE_FACTOR: 6.5,  // Adjust this based on your scaling needs
         ANIMATION_RATE: 50,
         pixels: {height: 257, width: 577},
@@ -86,7 +86,7 @@ class GameLevelDesert {
       const sprite_src_octocat = path + "/images/gamify/octocat.png"; // be sure to include the path
       const sprite_data_octocat = {
         id: 'Octocat',
-        greeting: "Hi I am Octocat! I am the GitHub code code code collaboration mascot",
+        greeting: "Hello there you intrested in becoming rich talk to my friend",
         src: sprite_src_octocat,
         SCALE_FACTOR: 10,  // Adjust this based on your scaling needs
         ANIMATION_RATE: 50,
@@ -176,15 +176,15 @@ const ScavengerFindObject = {
     this.objects = [
       { class: Background, data: image_data_desert },
       { class: Player, data: sprite_data_chillguy },
-      { class: Npc, data: sprite_data_tux },
+      { class: Npc, data: sprite_data_Npc },
       { class: Npc, data: sprite_data_octocat },
       { class: Npc, data: sprite_data_robot },
       { class: QuestNpc, data: SpriteDataFancyGuy},
       //{ class: ScavengerObject, data: ScavengerFindObject},
     ];
     this.quests = [
-     Quest.createQuest("Talk to my friend", "talktfriend", Quest.npcQuest([`Tux`])),
-     Quest.createQuest("Talk to my friends", "talktofriends", Quest.npcQuest([`Tux`,`Robot`])),
+     Quest.createQuest("Talk to my friend", "talktfriend", Quest.npcQuest([`Npc`])),
+     Quest.createQuest("Talk to my friends", "talktofriends", Quest.npcQuest([`Npc`,`Robot`])),
      Quest.createQuest("Talk to my uncle", "talktouncle", Quest.npcQuest([`Octocat`])),
     ];
   };
