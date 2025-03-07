@@ -67,13 +67,14 @@ At N@TM I had so many suggestion even though there were only six comment one pat
 ---
 
 ## **Self-Grade Assessment**
+| Assignment                | Learning process                          | Grade | 
 
-| **Topic**              | **Score (0-1)** | **Reflection**                                                                 |
-|-------------------------|-----------------|-------------------------------------------------------------------------------|
-| **OOP**                | 0.75            | Used in some areas like **ScavengerObject**, but ignored in **Quest.js** where it was needed. |
-| **Classes (OOP)**      | 0.8             | Understand classes but **overused static methods** in **QuestSystem.js**.     |
-| **HTML**               | 0.8             | UI looks great, but **empty text still renders instead of hiding itself**.    |
-| **Sprites**            | 0.77            | Used **static sprites** with limited animation. The **Tux NPC** had a wave animation but no others. |
-| **Optimization**       | 0.85            | Improved performance by **triggering quest conditions on collision instead of every frame**. |
-| **Error Handling**     | 0.93            | Strong debugging skills across multiple files.                                |
-| **Testing & Debugging**| 0.95            | Methodically tested quests and interactions.                                 |
+| Last 24 weeks overview    | Shown below and in GitHub analytics       | 4     | I have been pretty good at my work but need improvements.           |
+
+| Latest game feature       | ![Latestgame](image-13.png)               | 1.7   | It is almost identical to William's, but I worked hard to code it.  |
+
+| Organization              |                                           | 0.85  | ![DrawIO](image-10.png) Could have made it better, but it looks great. |
+
+| N@TM feedback             | ![alt text](image-14.png)                 | 0.81  | It has been great, but I could have gotten more reviews. I have done well. |
+
+| Total                     |                                           | 7. 7   |                                                                     |                                                                                           
