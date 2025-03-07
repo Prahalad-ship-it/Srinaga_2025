@@ -1,73 +1,89 @@
 ---
 toc: true
 layout: post
-title: Csse2 Final
-description: A honest Reflection about CSSE 1 and 2 as a coder
+title: CSSE2 Final
+description: An honest reflection about CSSE 1 and 2 as a coder
 permalink: CSSE2final/home
 ---
 
-Requrments
+## **Requirements**
+- **5 points** – 5 things I did over 24 weeks: skills learned, issues, burndown lists, lessons taught, live reviews, GitHub analytics, blogs.
+- **2 points** – Latest game feature.
+- **1 point** – Blog write-up on the latest game feature with code visualization (drawIO).
+- **1 point** – N@tM feedback (preferably from an adult or CS student).
 
-5 points - 5 things you did over 24 weeks, Skills learned, Issues, Burn Down, Lesson(s) taught, Live Reviews presentation(s) given, GitHub analytics, 8 blogs mentioned above, organizing all. of this in your blog
-2 point - Latest Game Feature
-1 point - Latest Game Feature blog write up, plus visualization of code understanding (using drawIO)
-1 point -  N@tM feedback from your demo, we are hoping for adult feedback or Computer Science student feedback (5 - 10 points of feedback)
+---
 
+## **5 Skills I Learned**
 
-## Accomplishments
-One of my key accomplishments was implementing a Mini Quest System. While it took time and extensive debugging, I developed core debugging skills that greatly improved my problem-solving abilities. 
-
-## ScavengerObject.js
-This script plays a crucial role in storing and managing quest-related data, ensuring seamless functionality and system integration.
-
-## QuestsNPC.js
-This system defines NPC behaviors, interactions, and quest roles, ensuring a dynamic and immersive player experience by handling diverse quest types and character interactions.
-
-QuestObject.js
-Completing the Quest Object was a major milestone, serving as the backbone for quest management, updates, and UI interactions. Though functional, I now see ways to refine and enhance its efficiency and flexibility in future iterations.
-
-
-## Skills I Learnt
-
-## Fundamentals of JavaScript
+1) Fundamentals of JavaScript
 I learned to use iterations, Booleans, and arrays to develop my game. This hands-on experience expanded my coding skills, making last trimester a fun and insightful journey in JavaScript.
 
 
-## Classes
+2) Classes
 Classes are essential in JavaScript, making my quest system more organized and manageable. They function as an advanced version of JSON objects, allowing me to store, update, and manage quest data efficiently in QuestSystem.js.
 
-## Extend
+3) Extend
 Using extend, I built new classes from existing ones, such as ScavengerObject.js and QuestNpc.js, by inheriting properties from GameObject.js and Character.js. This reduced redundant code while enabling dynamic expansion of objects and NPCs.
 
-## Class Methods
-Class methods allowed my custom classes to have unique functions, reducing repetitive code. They enable specific operations like Car.Drive() or Object.Destroy(), making my codebase more structured and maintainable.
+4) Github
 
-## Burndown Lists
+Through the training I received, I learned how to use GitHub and VS Code. Initially, I struggled with VS Code, but I eventually got the hang of it. Now, I'm proficient in committing code and using GitHub, which has proven to be a great tool. ![Work](image-11.png)
+ 
+
+5) Burndown Lists
 To stay on track while developing my quest system, I used a checklist. This helped minimize procrastination and allowed me to jump straight into coding with a clear plan.
 an eg of burndown list ![burndowneg.png](image-9.png)
 
-## Latest Game changes
+---
 
-The game changes were weird as I first worked on having background and adding music along with working on compass but I felt It wasn't enough so I went back and forth and the draw IO sucked so I decided that to look at other people IDea and ran into William idea and decided i don't care if it challenge I will work hard on it and implment in my game and here is my new draw io ![drawio](image-10.png)
+## **Latest Game Changes**
+Initially, I worked on **backgrounds, music, and a compass** but felt it wasn't enough.  
+- I **revised my approach**, inspired by William’s project, and added **new mechanics**.  
+- I worked hard to implement **a better quest system**.  
+- My new **drawIO diagram** reflects this updated game structure.  
+- ![DrawIO](image-10.png)
 
-## the work I liked most
-William's work is well-organized, with each of his blogs structured thoughtfully, unlike Ethan or Cason. He puts effort into his game, which I really appreciate.
+---
 
-| Topic                   | Score (0/1) | Reflection  |
+## **Work I Liked Most**
+William’s **well-structured blogs and game development** were inspiring.  
+- His **Adventure Game** helped me understand **quest systems** better.  
+- His code was **clear and well-documented**, making it easy to follow.  
+- Reviewing his game helped me **analyze my own coding practices**.  
+- ![William Inspired Work](image-12.png)
+
+---
+
+## **Future Plans in Computer Science**
+
+Right now I don't if I am going to take CSP or CSA i am still deciding however I am taking a JAvascrpit online course to learn about BAsics of JAvaScript and deepn my understanding about JavaScripit is on Cousera for free so I can apply and pratice hoepfully do CSP or CSA online or in community college. 
+
+## N@TM 
+
+At N@TM I had so many suggestion even though there were only six comment one paticulary caught mine Aaadi Bhat liked my game and told me that you could have a auest system with William Inspiration and Aadi idea I went to  work and here his comment. (Aadi B - Very exciting project, I like how you used music to make it more interesting. I would add a feature to the blue character that could give the player a quest. Overall great job!)
+
+
+---
+
+## **Self-Grade Assessment**
+| Topic                   | Score (0-1) | Reflection  |
 |-------------------------|------------|-------------|
-| **OOP**                | **0.75**    | "OOP was used in some places like ScavengerObject, but I completely ignored it in Quest.js where it was actually needed.".js. |
-| **Classes (OOP)**       | **0.8**     | I understand classes well, but I overused static methods. This worked for QuestSystem.js but was a poor choice for Quests.js." |
-| **HTML**               | **0.8**    | The quest output looks great, but I left a UI issue—empty text still renders an empty box instead of hiding itself. |
-| **Sprites**            | **0.77**     | All sprites are static, displaying only a single frame. The tux NPC has a wave animation, but I didn't apply animation to anything else except replacing the tux. |
-| **Optimization**       | **0.85**     | I reduced unnecessary checks by making quest conditions trigger on collision instead of running every frame. Huge performance boostunnecessary computations. |
-| **Error Handling**     | **0.93**     | "I can efficiently backtrack errors, from simple typos to complex issues spanning multiple JS files. Debugging skills are solid |
-| **Testing & Debugging** | **0.95**     |  methodically tested and debugged, ensuring code sections executed properly, conditions were met, and quests displayed as expected. |
+| **OOP**                | **0.75**    | Used in some areas like **ScavengerObject**, but ignored in **Quest.js** where it was needed. |
+| **Classes (OOP)**       | **0.8**     | Understand classes but **overused static methods** in **QuestSystem.js**. |
+| **HTML**               | **0.8**    | UI looks great, but **empty text still renders instead of hiding itself**. |
+| **Sprites**            | **0.77**     | Used **static sprites** with limited animation. The **Tux NPC** had a wave animation but no others. |
+| **Optimization**       | **0.85**     | Improved performance by **triggering quest conditions on collision instead of every frame**. |
+| **Error Handling**     | **0.93**     | Strong debugging skills across multiple files. |
+| **Testing & Debugging** | **0.95**     | Methodically tested quests and interactions. |
 
-## future imporovment
+---
 
-| Feature            | Changes                |
-|--------------------|------------------------|
-| Quest tracking system  | MAybe making like checklist and automatically  ticks the quests rather than fat box |
-| More Quest Types          | I would with enough time would have created map and made them colelct more quests or interact with Npc |
-| More Npcs | I would with enough time would have had diffrent Npcs with diffrent  animationsn|
-| PLayer Movment |What I could HAve done was make my player slow down and constant rather than speeding up making sure they don't go past NPC |
+## **Future Improvements**
+| Feature                | Changes & Improvements |
+|------------------------|------------------------|
+| **Quest Tracking**     | Implement a **checklist system** that automatically ticks completed quests. |
+| **More Quest Types**   | Add a **map system** for tracking multiple quests. |
+| **More NPCs**          | Create **NPCs with unique animations and interactions**. |
+| **Player Movement**    | Improve **movement smoothness** by preventing acceleration past NPCs. |
+
