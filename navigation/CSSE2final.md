@@ -67,23 +67,13 @@ At N@TM I had so many suggestion even though there were only six comment one pat
 ---
 
 ## **Self-Grade Assessment**
-| Topic                   | Score (0-1) | Reflection  |
-|-------------------------|------------|-------------|
-| **OOP**                | **0.75**    | Used in some areas like **ScavengerObject**, but ignored in **Quest.js** where it was needed. |
-| **Classes (OOP)**       | **0.8**     | Understand classes but **overused static methods** in **QuestSystem.js**. |
-| **HTML**               | **0.8**    | UI looks great, but **empty text still renders instead of hiding itself**. |
-| **Sprites**            | **0.77**     | Used **static sprites** with limited animation. The **Tux NPC** had a wave animation but no others. |
-| **Optimization**       | **0.85**     | Improved performance by **triggering quest conditions on collision instead of every frame**. |
-| **Error Handling**     | **0.93**     | Strong debugging skills across multiple files. |
-| **Testing & Debugging** | **0.95**     | Methodically tested quests and interactions. |
 
----
-
-## **Future Improvements**
-| Feature                | Changes & Improvements |
-|------------------------|------------------------|
-| **Quest Tracking**     | Implement a **checklist system** that automatically ticks completed quests. |
-| **More Quest Types**   | Add a **map system** for tracking multiple quests. |
-| **More NPCs**          | Create **NPCs with unique animations and interactions**. |
-| **Player Movement**    | Improve **movement smoothness** by preventing acceleration past NPCs. |
-
+| **Topic**              | **Score (0-1)** | **Reflection**                                                                 |
+|-------------------------|-----------------|-------------------------------------------------------------------------------|
+| **OOP**                | 0.75            | Used in some areas like **ScavengerObject**, but ignored in **Quest.js** where it was needed. |
+| **Classes (OOP)**      | 0.8             | Understand classes but **overused static methods** in **QuestSystem.js**.     |
+| **HTML**               | 0.8             | UI looks great, but **empty text still renders instead of hiding itself**.    |
+| **Sprites**            | 0.77            | Used **static sprites** with limited animation. The **Tux NPC** had a wave animation but no others. |
+| **Optimization**       | 0.85            | Improved performance by **triggering quest conditions on collision instead of every frame**. |
+| **Error Handling**     | 0.93            | Strong debugging skills across multiple files.                                |
+| **Testing & Debugging**| 0.95            | Methodically tested quests and interactions.                                 |
